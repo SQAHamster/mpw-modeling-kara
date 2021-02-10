@@ -1,0 +1,13 @@
+module modeling.KarasimulatorWorkflow
+
+var rootPath = "../.."
+var moduleBaseName = "de.unistuttgart.iste.sqa.mpw"
+
+Workflow {
+    component = @modeling.Workflow auto-inject {
+        rootPath = rootPath
+        sourceProjectName = "de.unistuttgart.iste.sqa.mpw.modeling.karasimulator"
+        generatedProjectBasePackage = "'de.unistuttgart.kara'"
+        targetSimulatorProjectBaseName = "simulators/${moduleBaseName}.karasimulator"
+    }
+}
