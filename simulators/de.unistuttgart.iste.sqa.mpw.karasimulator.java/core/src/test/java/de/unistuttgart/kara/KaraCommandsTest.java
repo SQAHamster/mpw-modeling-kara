@@ -166,9 +166,10 @@ public class KaraCommandsTest {
 
 	@Test
 	public void givenKaraWithLeafAvailable_whenRemoveLeaf_thenRemovedLeaf() {
-		withWorld(">;");
-		andLeafOn(0, 0);
+		withWorldBuilder(">;")
+		    .addLeafToTile(0, 0);
 
+		startGame();
 		removeLeaf();
 
 		assertNotOnLeaf();
@@ -388,8 +389,14 @@ public class KaraCommandsTest {
 	//<editor-fold desc="helpers">
 
 	private void withWorld(String map) {
+		game = GameStringifier.createFromStringStarted(map);
+		sut = game.getWorld().getKara();
+	}
+
+	private WorldBuilder withWorldBuilder(String map) {
 		game = GameStringifier.createFromString(map);
 		sut = game.getWorld().getKara();
+		return new WorldBuilder(game);
 	}
 
 	private void removeFromStage() {
@@ -398,12 +405,12 @@ public class KaraCommandsTest {
 		internalKara.setStage(null);
 	}
 
-	private static Location locationOf(int x, int y) {
-		return new Location(x, y);
+	private void startGame() {
+		game.startGame();
 	}
 
-	private void andLeafOn(int columnIndex, int rowIndex) {
-		new WorldBuilder(game).addLeafToTile(columnIndex, rowIndex);
+	private static Location locationOf(int x, int y) {
+		return new Location(x, y);
 	}
 
 	private void turnLeft() {

@@ -7,6 +7,12 @@ import java.util.function.Consumer;
 
 public class GameStringifier {
 	
+	public static KaraGame createFromStringStarted(String map) {
+		var game = createFromString(map);
+		game.startGame();
+		return game;
+	}
+
 	public static KaraGame createFromString(String map) {
 		var game = new KaraGame();
 
@@ -22,7 +28,6 @@ public class GameStringifier {
 		}
 
 		game.getPerformance().setDelayEnabled(false);
-		game.startGame();
 
 		return game;
 	}
