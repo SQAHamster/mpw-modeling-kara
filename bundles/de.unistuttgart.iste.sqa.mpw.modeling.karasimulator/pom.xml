@@ -104,6 +104,7 @@
                     <filesets>
                         <fileset>
                             <directory>${basedir}/debugout</directory>
+                            <directory>${basedir}/src-gen</directory>
                         </fileset>
                     </filesets>
                 </configuration>
