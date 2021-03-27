@@ -2,6 +2,7 @@ package de.unistuttgart.kara.util;
 
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.Tile;
 import de.unistuttgart.kara.kara.*;
+import de.unistuttgart.kara.facade.*;
 
 import java.util.function.Consumer;
 

@@ -1,4 +1,4 @@
-package de.unistuttgart.karasimulator.ui;
+package de.unistuttgart.kara.ui;
 
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.GameViewInput;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.GameViewModel;

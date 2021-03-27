@@ -1,4 +1,4 @@
-package de.unistuttgart.karasimulator.ui;
+package de.unistuttgart.kara.ui;
 
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCell;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCellLayer;

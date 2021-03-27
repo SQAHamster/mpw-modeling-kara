@@ -1,13 +1,14 @@
 package de.unistuttgart.kara.viewmodel.impl;
 
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.LogEntry;
-import de.unistuttgart.iste.sqa.mpw.framework.mpw.Size;
+import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Size;
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.Tile;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCell;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCellLayer;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelLogEntry;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.impl.GameViewPresenterBase;
 import de.unistuttgart.kara.kara.*;
+import de.unistuttgart.kara.facade.*;
 import javafx.beans.property.ReadOnlyListProperty;
 
 import java.util.HashMap;

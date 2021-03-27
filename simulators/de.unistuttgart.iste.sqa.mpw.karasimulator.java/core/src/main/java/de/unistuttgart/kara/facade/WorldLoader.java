@@ -1,10 +1,8 @@
-package de.unistuttgart.kara;
+package de.unistuttgart.kara.facade;
 
-import de.unistuttgart.iste.sqa.mpw.framework.mpw.Direction;
-import de.unistuttgart.iste.sqa.mpw.framework.mpw.Location;
-import de.unistuttgart.iste.sqa.mpw.framework.mpw.Size;
-import de.unistuttgart.kara.kara.KaraGame;
-import de.unistuttgart.kara.kara.WorldBuilder;
+import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Direction;
+import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Location;
+import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Size;
 
 import java.io.BufferedReader;
 import java.io.IOException;

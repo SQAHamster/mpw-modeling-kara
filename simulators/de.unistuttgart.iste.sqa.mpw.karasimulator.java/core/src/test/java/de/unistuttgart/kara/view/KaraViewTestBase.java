@@ -4,10 +4,10 @@ import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.GameViewInput;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.GameViewModel;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCell;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelRow;
-import de.unistuttgart.kara.WorldLoader;
+import de.unistuttgart.kara.facade.WorldLoader;
 import de.unistuttgart.kara.viewmodel.impl.KaraGameViewPresenter;
-import de.unistuttgart.kara.kara.Kara;
-import de.unistuttgart.kara.kara.KaraGame;
+import de.unistuttgart.kara.facade.Kara;
+import de.unistuttgart.kara.facade.KaraGame;
 import org.junit.jupiter.api.BeforeAll;
 
 import java.io.IOException;

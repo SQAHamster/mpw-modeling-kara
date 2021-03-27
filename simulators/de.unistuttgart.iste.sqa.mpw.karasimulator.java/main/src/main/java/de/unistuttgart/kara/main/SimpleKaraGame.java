@@ -1,9 +1,9 @@
-package de.unistuttgart.karasimulator.examples;
+package de.unistuttgart.kara.main;
 
-import de.unistuttgart.kara.WorldLoader;
-import de.unistuttgart.kara.kara.Kara;
-import de.unistuttgart.kara.kara.KaraGame;
-import de.unistuttgart.karasimulator.ui.JavaFXUI;
+import de.unistuttgart.kara.facade.WorldLoader;
+import de.unistuttgart.kara.facade.Kara;
+import de.unistuttgart.kara.facade.KaraGame;
+import de.unistuttgart.kara.ui.JavaFXUI;
 import de.unistuttgart.iste.sqa.mpw.framework.exceptions.GameAbortedException;
 
 import java.io.Console;
@@ -24,15 +24,6 @@ public abstract class SimpleKaraGame {
             throw new RuntimeException(e);
         }
     }
-
-    /**
-     * Main method used to start the simple kara game.
-     * @param args Default command line arguments, not used.
-     */
-    public static void main(final String[] args) {
-        createInstance(Example01.class);
-    }
-
 
     /**
      * Name of the environment variable used to determine the output interface

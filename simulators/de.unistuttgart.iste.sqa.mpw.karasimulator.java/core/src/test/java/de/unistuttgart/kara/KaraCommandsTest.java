@@ -1,10 +1,11 @@
 package de.unistuttgart.kara;
 
 import de.unistuttgart.iste.sqa.mpw.framework.exceptions.CommandConstraintException;
-import de.unistuttgart.iste.sqa.mpw.framework.mpw.Location;
+import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Location;
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.LogEntry;
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.Tile;
 import de.unistuttgart.kara.kara.*;
+import de.unistuttgart.kara.facade.*;
 import de.unistuttgart.kara.util.GameStringifier;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

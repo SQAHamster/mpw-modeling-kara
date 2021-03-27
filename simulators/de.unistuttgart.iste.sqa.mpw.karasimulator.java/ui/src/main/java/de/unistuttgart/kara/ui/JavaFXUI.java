@@ -1,9 +1,9 @@
-package de.unistuttgart.karasimulator.ui;
+package de.unistuttgart.kara.ui;
 
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.UserInputInterface;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.GameViewInput;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.GameViewModel;
-import de.unistuttgart.kara.kara.KaraGame;
+import de.unistuttgart.kara.facade.KaraGame;
 import de.unistuttgart.kara.viewmodel.impl.KaraGameViewPresenter;
 import javafx.application.Application;
 import javafx.application.Platform;

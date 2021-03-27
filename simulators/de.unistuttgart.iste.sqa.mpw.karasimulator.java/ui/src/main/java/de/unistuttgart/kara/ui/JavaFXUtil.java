@@ -1,4 +1,4 @@
-package de.unistuttgart.karasimulator.ui;
+package de.unistuttgart.kara.ui;
 
 import javafx.application.Platform;
 import javafx.scene.image.Image;

@@ -1,4 +1,4 @@
-package de.unistuttgart.karasimulator.ui;
+package de.unistuttgart.kara.ui;
 
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.UserInputInterface;
 import javafx.application.Platform;

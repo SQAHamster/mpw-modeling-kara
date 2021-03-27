@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>core</artifactId>
 
-	<name>Polyglot Karasimulator Core Model Library</name>
+	<name>Kara Simulator Core Model Library</name>
 
 	<parent>
 		<groupId>de.unistuttgart.iste.sqa.mpw.karasimulator</groupId>

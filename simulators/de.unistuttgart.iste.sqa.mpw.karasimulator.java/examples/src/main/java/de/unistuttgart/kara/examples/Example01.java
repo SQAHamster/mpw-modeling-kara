@@ -1,6 +1,11 @@
-package de.unistuttgart.karasimulator.examples;
+package de.unistuttgart.kara.examples;
 
-class Example01 extends SimpleKaraGame {
+import de.unistuttgart.kara.main.SimpleKaraGame;
+
+public class Example01 extends SimpleKaraGame {
+    public static void main(final String[] args) {
+        createInstance(Example01.class);
+    }
 
     @Override
     protected void run() {

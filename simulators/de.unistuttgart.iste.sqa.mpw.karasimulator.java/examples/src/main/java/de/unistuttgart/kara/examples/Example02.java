@@ -1,6 +1,8 @@
-package de.unistuttgart.karasimulator.examples;
+package de.unistuttgart.kara.examples;
 
-class Example02 extends SimpleKaraGame {
+import de.unistuttgart.kara.main.SimpleKaraGame;
+
+public class Example02 extends SimpleKaraGame {
     public static void main(final String[] args) {
         createInstance(Example02.class);
     }
