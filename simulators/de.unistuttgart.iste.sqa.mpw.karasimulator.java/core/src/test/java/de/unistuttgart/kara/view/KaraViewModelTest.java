@@ -9,7 +9,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class KaraViewModelTest extends KaraViewTestBase {
+public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testInit() throws IOException {
