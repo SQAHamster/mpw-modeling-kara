@@ -1,0 +1,13 @@
+context World::addTreeToTile(location:Location)
+
+/** location has to be on the world */
+precondition: 
+    self.isLocationInWorld(location);
+
+/** the tile at the given location has to be empty */
+precondition:
+    self.getTileAt(location).contents->isEmpty();
+
+/** a tree has to be placed on the tile's location */
+postcondition: 
+    self.getTileAt(location).contents->typeSelect(Tree)->size() = 1;

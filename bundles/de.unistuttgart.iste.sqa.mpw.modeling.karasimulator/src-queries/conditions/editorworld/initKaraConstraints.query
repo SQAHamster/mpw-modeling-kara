@@ -1,0 +1,13 @@
+context World::initKara(location:Location, direction:Direction)
+
+/** kara must not be already initialized */
+precondition: 
+    self.kara.stage = null;
+
+/** location has to be on the world */
+precondition: 
+    self.isLocationInWorld(location);
+
+/** Kara has to be placed on the tile's location */
+postcondition: 
+    self.getTileAt(location).contents->typeSelect(Kara)->at(0) = self.kara;

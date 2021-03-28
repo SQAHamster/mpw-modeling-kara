@@ -1,0 +1,9 @@
+context World::clearTile(location:Location)
+
+/** location has to be on the world */
+precondition: 
+    self.isLocationInWorld(location);
+    
+/** the tile's contents have to be empty */
+postcondition:
+    self.getTileAt(location).contents->isEmpty();

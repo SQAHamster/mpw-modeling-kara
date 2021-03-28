@@ -1,0 +1,13 @@
+context World::addLeafToTile(location:Location)
+
+/** location has to be on the world */
+precondition: 
+    self.isLocationInWorld(location);
+
+/** the tile at the given location has to be empty */
+precondition:
+    self.getTileAt(location).contents->isEmpty() or self.isOnlyKaraAtLocation(location);
+
+/** a leaf has to be placed on the tile's location */
+postcondition: 
+    self.getTileAt(location).contents->typeSelect(Leaf)->size() = 1;
