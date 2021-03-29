@@ -1,4 +1,4 @@
-context World::initTerritory(columns: EInt, rows: EInt)
+context World::initWorld(columns: EInt, rows: EInt)
 
 /** size must be > 0 */
 precondition: 
