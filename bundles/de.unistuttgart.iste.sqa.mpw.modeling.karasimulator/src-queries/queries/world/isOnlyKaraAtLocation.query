@@ -2,4 +2,4 @@ context World
 
 /** For a given location, check whether only Kara is placed on the tile. */
 internal query isOnlyKaraAtLocation(location: Location): 
-    (self.kara.currentTile.location = location) implies self.kara.currentTile.contents->isEmpty();
+    (self.kara.currentTile.location = location) implies self.kara.currentTile.contents->size() = 1;
