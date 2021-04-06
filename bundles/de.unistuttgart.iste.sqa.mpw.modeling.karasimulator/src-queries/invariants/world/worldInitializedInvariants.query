@@ -1,0 +1,4 @@
+context World
+
+/** the world tiles must not be empty */
+invariant isInitialized: self.tiles->notEmpty();

@@ -1,0 +1,4 @@
+context Kara
+
+/** Kara is placed on a tile. */
+invariant isInitialized: self.stage <> null and self.currentTile <> null;
