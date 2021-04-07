@@ -16,7 +16,7 @@ using namespace framework;
 using namespace util;
 
 /**
- * Tests on the view-model layer, which are using the {@link viewmodel::HamsterViewModelStringifier} to create
+ * Tests on the view-model layer, which are using the {@link viewmodel::KaraViewModelStringifier} to create
  * string based representations.
  * @note use 'NO-LINT' comment at tests to suppress a warning caused by TEST_F
  */
