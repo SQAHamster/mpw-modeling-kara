@@ -4,6 +4,6 @@ context World::initWorld(columns: EInt, rows: EInt)
 precondition: 
     columns > 0 and rows > 0;
 
-/** size of territory is set */
+/** size of world is set */
 postcondition: 
     self.stageSize.columnCount = columns and self.stageSize.rowCount = rows;
