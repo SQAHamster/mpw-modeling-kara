@@ -9,7 +9,7 @@ public class Example02 extends SimpleKaraGame {
 
     @Override
     protected String getWorldFile() {
-        return "/worlds/example02.ter";
+        return "de.unistuttgart.kara.worlds/example02.ter";
     }
 
     /**

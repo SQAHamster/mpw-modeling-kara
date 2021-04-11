@@ -66,9 +66,13 @@ public class KaraWorldGrid extends StackPane {
         this.getChildren().add(this.worldGrid);
         configureSquareSizedTiles(this.gridSize.get());
         this.gridSize.addListener((obj, oldValue, newValue) -> {
-            configureSquareSizedTiles(newValue);
-            this.viewModel.rowsProperty().forEach(row -> addRow(row));
+            Platform.runLater(() -> {
+                configureSquareSizedTiles(newValue);
+                this.worldGrid.getChildren().clear();
+            });
         });
+        this.minWidthProperty().bind(worldGrid.minWidthProperty());
+        this.minHeightProperty().bind(worldGrid.minHeightProperty());
     }
 
     public void bindToViewModel(final GameViewModel viewModel) {
@@ -95,7 +99,7 @@ public class KaraWorldGrid extends StackPane {
         final int rows = size.getRowCount();
         final NumberBinding pixPerCellWidth = this.widthProperty().divide(columns == 0 ? 1 : columns);
         final NumberBinding pixPerCellHeight = this.heightProperty().divide(rows == 0 ? 1 : rows);
-        this.squaredSize = Bindings.min(pixPerCellHeight, pixPerCellWidth);
+        this.squaredSize = Bindings.max(Bindings.min(pixPerCellHeight, pixPerCellWidth), MINIMUM_TILE_SIZE);
 
         this.worldGrid.getColumnConstraints().clear();
         for (int i = 0; i < columns; i++) {
@@ -113,6 +117,8 @@ public class KaraWorldGrid extends StackPane {
 
         this.worldGrid.maxWidthProperty().bind(squaredSize.multiply(columns));
         this.worldGrid.maxHeightProperty().bind(squaredSize.multiply(rows));
+        this.worldGrid.setMinWidth(MINIMUM_TILE_SIZE*columns);
+        this.worldGrid.setMinHeight(MINIMUM_TILE_SIZE*rows);
 
         this.worldGrid.setAlignment(Pos.CENTER);
     }
