@@ -13,7 +13,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testInit() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         assertWorld(
                 "|##|##|##|##|##|\n" +
                 "|##|> |@ |  |##|\n" +
@@ -29,7 +29,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testMove() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         kara.move();
         assertWorld(
                 "|##|##|##|##|##|\n" +
@@ -44,7 +44,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testMoveOnLeaf() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         kara.move();
         kara.turnRight();
         kara.move();
@@ -57,7 +57,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testRemoveLeaf() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         kara.move();
         kara.turnRight();
         kara.move();
@@ -71,7 +71,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testPutLeaf() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         kara.putLeaf();
         assertWorld(
                 "|##|##|##|##|##|\n" +
@@ -82,7 +82,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testMoveAndRotateAndMove() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         kara.move();
         kara.turnLeft();
         kara.turnLeft();
@@ -98,8 +98,26 @@ public class KaraViewModelTest extends KaraViewTestBase {
     }
 
     @Test
+    public void testInitializeFurtherTerritory() throws IOException {
+        withWorld("example01.ter");
+        initializeOtherWorld("example03.ter");
+        assertWorld(
+                "|##|##|##|\n" +
+                "|##|> |##|\n" +
+                "|##|  |##|\n" +
+                "|##|* |##|\n" +
+                "|##|##|##|\n");
+        initializeOtherWorld("example01.ter");
+        assertWorld(
+                "|##|##|##|##|##|\n" +
+                "|##|> |@ |  |##|\n" +
+                "|##|##|* |##|##|\n");
+    }
+
+
+    @Test
     public void testMoveAgainstTree() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         kara.move();
         kara.turnLeft();
 
@@ -110,7 +128,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testMoveMushroomBlocked() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         kara.move();
 
         assertThrows(CommandConstraintException.class, () -> {
@@ -120,7 +138,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
 
     @Test
     public void testLog() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         kara.move();
         kara.putLeaf();
         kara.turnLeft();
@@ -143,7 +161,7 @@ public class KaraViewModelTest extends KaraViewTestBase {
      */
     @Test
     public void testButtonsForModes() throws IOException {
-        withWorld("/worlds/example01.ter");
+        withWorld("example01.ter");
         assertButtons("/play/ [pause] /undo/ /redo/");
         kara.move();
         kara.turnRight();

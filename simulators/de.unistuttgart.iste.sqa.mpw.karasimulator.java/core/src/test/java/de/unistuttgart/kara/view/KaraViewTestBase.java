@@ -31,7 +31,8 @@ public class KaraViewTestBase {
         initCharMapping();
     }
 
-    protected void withWorld(String path) throws IOException {
+    protected void withWorld(final String fileName) throws IOException {
+        final String path = getResourcePath(fileName);
         game = new KaraGame();
         WorldLoader.initializeFor(game).loadFromResourceFile(path);
 
@@ -47,6 +48,15 @@ public class KaraViewTestBase {
         viewModel = presenter.getViewModel();
 
         game.setUserInputInterface(new UserInputInterfaceFake());
+    }
+
+    protected void initializeOtherWorld(final String fileName) throws IOException {
+        game.hardReset();
+        WorldLoader.initializeFor(game).loadFromResourceFile(getResourcePath(fileName));
+    }
+
+    private String getResourcePath(String fileName) {
+        return "de.unistuttgart.kara.worlds/" + fileName;
     }
 
     protected void clickPlay() {

@@ -1,24 +1,23 @@
 package de.unistuttgart.kara.viewmodel.impl;
 
-import de.unistuttgart.iste.sqa.mpw.framework.mpw.LogEntry;
 import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Size;
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.Tile;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCell;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCellLayer;
-import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelLogEntry;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.impl.GameViewPresenterBase;
-import de.unistuttgart.kara.kara.*;
-import de.unistuttgart.kara.facade.*;
+import de.unistuttgart.kara.facade.KaraGame;
+import de.unistuttgart.kara.facade.World;
+import de.unistuttgart.kara.kara.Leaf;
+import de.unistuttgart.kara.kara.Mushroom;
+import de.unistuttgart.kara.kara.ReadOnlyKara;
+import de.unistuttgart.kara.kara.Tree;
 import javafx.beans.property.ReadOnlyListProperty;
+import javafx.beans.property.ReadOnlyObjectProperty;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 public class KaraGameViewPresenter extends GameViewPresenterBase {
 	private final World world;
-
-	private final Map<LogEntry, ViewModelLogEntry> logEntryMap = new HashMap<>();
 
 	public KaraGameViewPresenter(KaraGame game) {
 		super(game);
@@ -26,8 +25,8 @@ public class KaraGameViewPresenter extends GameViewPresenterBase {
 	}
 
 	@Override
-	protected Size getStageSizeFromConcreteStage() {
-		return world.getWorldSize();
+	protected ReadOnlyObjectProperty<Size> getStageSizeFromConcreteStage() {
+		return world.getInternalWorld().stageSizeProperty();
 	}
 
 	@Override
@@ -100,7 +99,9 @@ public class KaraGameViewPresenter extends GameViewPresenterBase {
 
 	private void refreshKaraLayer(ViewModelCellLayer layer, ReadOnlyKara kara) {
 		layer.setVisible(kara.getCurrentTile() != null);
-		layer.setRotation(getRotationForDirection(kara.getDirection()));
+		if (kara.getDirection() != null) {
+			layer.setRotation(getRotationForDirection(kara.getDirection()));
+		}
 	}
 
 }

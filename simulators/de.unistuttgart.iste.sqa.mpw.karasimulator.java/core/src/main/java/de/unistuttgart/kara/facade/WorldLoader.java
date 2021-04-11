@@ -43,7 +43,7 @@ public class WorldLoader {
 
     private void setSizeFromStrings(final String[] lines) {
         this.loadedWorldDimensions = new Size(Integer.parseInt(lines[0]), Integer.parseInt(lines[1]));
-        this.worldBuilder.initWorld(this.loadedWorldDimensions.getColumnCount(), this.loadedWorldDimensions.getRowCount()); // todo allow size as parameter
+        this.worldBuilder.initWorld(this.loadedWorldDimensions.getColumnCount(), this.loadedWorldDimensions.getRowCount());
     }
 
     private void buildTiles(final String[] lines) {
@@ -91,7 +91,7 @@ public class WorldLoader {
     }
 
     private List<String> readLinesFromWorldResourceFile(final String worldFileName) throws IOException {
-        final InputStream in = getClass().getResourceAsStream(worldFileName);
+        final InputStream in = getClass().getClassLoader().getResourceAsStream(worldFileName);
         if (in == null) {
             throw new IOException("Unable to load the world from the filename: " + worldFileName);
         }

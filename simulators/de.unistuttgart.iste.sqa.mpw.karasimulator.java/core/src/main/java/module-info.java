@@ -8,4 +8,5 @@ module de.unistuttgart.kara.core {
     exports de.unistuttgart.kara.viewmodel.impl to de.unistuttgart.kara.ui;
 
     opens de.unistuttgart.kara.kara;
+    opens de.unistuttgart.kara.worlds;
 }
