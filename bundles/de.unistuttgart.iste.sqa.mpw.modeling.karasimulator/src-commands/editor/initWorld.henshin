@@ -4,14 +4,17 @@
   <imports href="http://www.mpw.uni-stuttgart.de/mpw#/"/>
   <imports href="../../model/Kara.ecore#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_KqqZwDGPEeuDH7pHwTyKiw" name="createFirstRowTile">
+    <parameters xmi:id="_67o1YJVVEeuAPM8vXiTh3g" name="next" kind="INOUT">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
     <parameters xmi:id="_zPfocDGREeuDH7pHwTyKiw" name="x" kind="VAR">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
     <lhs xmi:id="_KqxugDGPEeuDH7pHwTyKiw" name="Lhs">
-      <nodes xmi:id="_XcP14DGPEeuDH7pHwTyKiw" name="tile" incoming="_sErScDGPEeuDH7pHwTyKiw" outgoing="_yfW24DGPEeuDH7pHwTyKiw">
+      <nodes xmi:id="_XcP14DGPEeuDH7pHwTyKiw" name="next" incoming="_pX2zUJh7EeuRaKZ4faWZzQ" outgoing="_yfW24DGPEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
-      <nodes xmi:id="_Y1Db4DGPEeuDH7pHwTyKiw" name="self" outgoing="_sErScDGPEeuDH7pHwTyKiw">
+      <nodes xmi:id="_Y1Db4DGPEeuDH7pHwTyKiw" name="self" outgoing="_pX2zUJh7EeuRaKZ4faWZzQ">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
       <nodes xmi:id="_w3W-UDGPEeuDH7pHwTyKiw" incoming="_yfW24DGPEeuDH7pHwTyKiw">
@@ -20,19 +23,19 @@
           <type href="http://www.mpw.uni-stuttgart.de/mpw#//Location/column"/>
         </attributes>
       </nodes>
-      <edges xmi:id="_sErScDGPEeuDH7pHwTyKiw" source="_Y1Db4DGPEeuDH7pHwTyKiw" target="_XcP14DGPEeuDH7pHwTyKiw">
-        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
-      </edges>
       <edges xmi:id="_yfW24DGPEeuDH7pHwTyKiw" source="_XcP14DGPEeuDH7pHwTyKiw" target="_w3W-UDGPEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
+      </edges>
+      <edges xmi:id="_pX2zUJh7EeuRaKZ4faWZzQ" source="_Y1Db4DGPEeuDH7pHwTyKiw" target="_XcP14DGPEeuDH7pHwTyKiw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
       </edges>
       <formula xsi:type="henshin:Not" xmi:id="_nChAIDGPEeuDH7pHwTyKiw">
         <child xsi:type="henshin:NestedCondition" xmi:id="_nChAITGPEeuDH7pHwTyKiw">
           <conclusion xmi:id="_nChAIjGPEeuDH7pHwTyKiw">
-            <nodes xmi:id="_nChAIzGPEeuDH7pHwTyKiw" incoming="_sErSdDGPEeuDH7pHwTyKiw" outgoing="_yfXd8DGPEeuDH7pHwTyKiw _3F02QDGQEeuDH7pHwTyKiw">
+            <nodes xmi:id="_nChAIzGPEeuDH7pHwTyKiw" incoming="_pX3aYZh7EeuRaKZ4faWZzQ" outgoing="_yfXd8DGPEeuDH7pHwTyKiw _3F02QDGQEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
             </nodes>
-            <nodes xmi:id="_sErScjGPEeuDH7pHwTyKiw" name="this" outgoing="_sErSdDGPEeuDH7pHwTyKiw">
+            <nodes xmi:id="_sErScjGPEeuDH7pHwTyKiw" name="this" outgoing="_pX3aYZh7EeuRaKZ4faWZzQ">
               <type href="../../model/Kara.ecore#//World"/>
             </nodes>
             <nodes xmi:id="_w3W-UzGPEeuDH7pHwTyKiw" incoming="_yfXd8DGPEeuDH7pHwTyKiw">
@@ -44,14 +47,14 @@
             <nodes xmi:id="_WW0e4DGPEeuDH7pHwTyKiw" incoming="_3F02QDGQEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
             </nodes>
-            <edges xmi:id="_sErSdDGPEeuDH7pHwTyKiw" source="_sErScjGPEeuDH7pHwTyKiw" target="_nChAIzGPEeuDH7pHwTyKiw">
-              <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
-            </edges>
             <edges xmi:id="_yfXd8DGPEeuDH7pHwTyKiw" source="_nChAIzGPEeuDH7pHwTyKiw" target="_w3W-UzGPEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
             </edges>
             <edges xmi:id="_3F02QDGQEeuDH7pHwTyKiw" source="_nChAIzGPEeuDH7pHwTyKiw" target="_WW0e4DGPEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/east"/>
+            </edges>
+            <edges xmi:id="_pX3aYZh7EeuRaKZ4faWZzQ" source="_sErScjGPEeuDH7pHwTyKiw" target="_nChAIzGPEeuDH7pHwTyKiw">
+              <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
             </edges>
           </conclusion>
           <mappings xmi:id="_nChAJDGPEeuDH7pHwTyKiw" origin="_XcP14DGPEeuDH7pHwTyKiw" image="_nChAIzGPEeuDH7pHwTyKiw"/>
@@ -61,13 +64,13 @@
       </formula>
     </lhs>
     <rhs xmi:id="_KqyVkDGPEeuDH7pHwTyKiw" name="Rhs">
-      <nodes xmi:id="_XcP14TGPEeuDH7pHwTyKiw" name="tile" incoming="_sErScTGPEeuDH7pHwTyKiw" outgoing="_fxNVsDGPEeuDH7pHwTyKiw _yfW24TGPEeuDH7pHwTyKiw">
+      <nodes xmi:id="_XcP14TGPEeuDH7pHwTyKiw" incoming="_pX3aYJh7EeuRaKZ4faWZzQ" outgoing="_fxNVsDGPEeuDH7pHwTyKiw _yfW24TGPEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
-      <nodes xmi:id="_Y1Db4TGPEeuDH7pHwTyKiw" name="self" outgoing="_iEGlYDGPEeuDH7pHwTyKiw _sErScTGPEeuDH7pHwTyKiw">
+      <nodes xmi:id="_Y1Db4TGPEeuDH7pHwTyKiw" name="self" outgoing="_pX3aYJh7EeuRaKZ4faWZzQ _p-vNIJh7EeuRaKZ4faWZzQ">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
-      <nodes xmi:id="_bxG9UDGPEeuDH7pHwTyKiw" name="newTile" incoming="_iEGlYDGPEeuDH7pHwTyKiw _fxNVsDGPEeuDH7pHwTyKiw" outgoing="_ITEa0DGQEeuDH7pHwTyKiw">
+      <nodes xmi:id="_bxG9UDGPEeuDH7pHwTyKiw" name="next" incoming="_fxNVsDGPEeuDH7pHwTyKiw _p-vNIJh7EeuRaKZ4faWZzQ" outgoing="_ITEa0DGQEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
       <nodes xmi:id="_w3W-UTGPEeuDH7pHwTyKiw" incoming="_yfW24TGPEeuDH7pHwTyKiw">
@@ -82,14 +85,8 @@
           <type href="http://www.mpw.uni-stuttgart.de/mpw#//Location/column"/>
         </attributes>
       </nodes>
-      <edges xmi:id="_iEGlYDGPEeuDH7pHwTyKiw" source="_Y1Db4TGPEeuDH7pHwTyKiw" target="_bxG9UDGPEeuDH7pHwTyKiw">
-        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
-      </edges>
       <edges xmi:id="_fxNVsDGPEeuDH7pHwTyKiw" source="_XcP14TGPEeuDH7pHwTyKiw" target="_bxG9UDGPEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/east"/>
-      </edges>
-      <edges xmi:id="_sErScTGPEeuDH7pHwTyKiw" source="_Y1Db4TGPEeuDH7pHwTyKiw" target="_XcP14TGPEeuDH7pHwTyKiw">
-        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
       </edges>
       <edges xmi:id="_yfW24TGPEeuDH7pHwTyKiw" source="_XcP14TGPEeuDH7pHwTyKiw" target="_w3W-UTGPEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
@@ -97,42 +94,54 @@
       <edges xmi:id="_ITEa0DGQEeuDH7pHwTyKiw" source="_bxG9UDGPEeuDH7pHwTyKiw" target="_F4zX0DGQEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
       </edges>
+      <edges xmi:id="_pX3aYJh7EeuRaKZ4faWZzQ" source="_Y1Db4TGPEeuDH7pHwTyKiw" target="_XcP14TGPEeuDH7pHwTyKiw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
+      </edges>
+      <edges xmi:id="_p-vNIJh7EeuRaKZ4faWZzQ" source="_Y1Db4TGPEeuDH7pHwTyKiw" target="_bxG9UDGPEeuDH7pHwTyKiw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
+      </edges>
     </rhs>
     <mappings xmi:id="_XcP14jGPEeuDH7pHwTyKiw" origin="_XcP14DGPEeuDH7pHwTyKiw" image="_XcP14TGPEeuDH7pHwTyKiw"/>
     <mappings xmi:id="_Y1Db4jGPEeuDH7pHwTyKiw" origin="_Y1Db4DGPEeuDH7pHwTyKiw" image="_Y1Db4TGPEeuDH7pHwTyKiw"/>
     <mappings xmi:id="_w3W-UjGPEeuDH7pHwTyKiw" origin="_w3W-UDGPEeuDH7pHwTyKiw" image="_w3W-UTGPEeuDH7pHwTyKiw"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_R6N7QDGQEeuDH7pHwTyKiw" name="createInitialTile">
+    <parameters xmi:id="__L04MJVVEeuAPM8vXiTh3g" name="firstInRow" kind="OUT">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
     <lhs xmi:id="_R6QXgDGQEeuDH7pHwTyKiw" name="Lhs">
       <nodes xmi:id="_YPL5QDGQEeuDH7pHwTyKiw" name="self">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
     </lhs>
     <rhs xmi:id="_R6QXgTGQEeuDH7pHwTyKiw" name="Rhs">
-      <nodes xmi:id="_TpZZ4DGQEeuDH7pHwTyKiw" incoming="_ZTG0YDGQEeuDH7pHwTyKiw" outgoing="_pEd3EDIOEeuu_uKvvP5GUQ">
+      <nodes xmi:id="_TpZZ4DGQEeuDH7pHwTyKiw" name="firstInRow" incoming="_gxWF8Jh6EeuRaKZ4faWZzQ" outgoing="_pEd3EDIOEeuu_uKvvP5GUQ">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
-      <nodes xmi:id="_YPL5QTGQEeuDH7pHwTyKiw" name="self" outgoing="_ZTG0YDGQEeuDH7pHwTyKiw">
+      <nodes xmi:id="_YPL5QTGQEeuDH7pHwTyKiw" name="self" outgoing="_gxWF8Jh6EeuRaKZ4faWZzQ">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
       <nodes xmi:id="_mrnwYDIOEeuu_uKvvP5GUQ" incoming="_pEd3EDIOEeuu_uKvvP5GUQ">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Location"/>
       </nodes>
-      <edges xmi:id="_ZTG0YDGQEeuDH7pHwTyKiw" source="_YPL5QTGQEeuDH7pHwTyKiw" target="_TpZZ4DGQEeuDH7pHwTyKiw">
-        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
-      </edges>
       <edges xmi:id="_pEd3EDIOEeuu_uKvvP5GUQ" source="_TpZZ4DGQEeuDH7pHwTyKiw" target="_mrnwYDIOEeuu_uKvvP5GUQ">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
+      </edges>
+      <edges xmi:id="_gxWF8Jh6EeuRaKZ4faWZzQ" source="_YPL5QTGQEeuDH7pHwTyKiw" target="_TpZZ4DGQEeuDH7pHwTyKiw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
       </edges>
     </rhs>
     <mappings xmi:id="_YPL5QjGQEeuDH7pHwTyKiw" origin="_YPL5QDGQEeuDH7pHwTyKiw" image="_YPL5QTGQEeuDH7pHwTyKiw"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_bvk20DGQEeuDH7pHwTyKiw" name="createFirstTileForNextRow">
+    <parameters xmi:id="_UQv8IJVZEeuAPM8vXiTh3g" name="firstInRow" kind="INOUT">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
     <parameters xmi:id="_xkHEsDGREeuDH7pHwTyKiw" name="y" kind="VAR">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
     <lhs xmi:id="_bvmsADGQEeuDH7pHwTyKiw" name="Lhs">
-      <nodes xmi:id="_j5NQYDGQEeuDH7pHwTyKiw" name="tile" incoming="_XK2R8DGREeuDH7pHwTyKiw" outgoing="_RQpkYDGREeuDH7pHwTyKiw">
+      <nodes xmi:id="_j5NQYDGQEeuDH7pHwTyKiw" name="firstInRow" incoming="_wG0lsJh7EeuRaKZ4faWZzQ" outgoing="_RQpkYDGREeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
       <nodes xmi:id="_O-_DwDGREeuDH7pHwTyKiw" incoming="_RQpkYDGREeuDH7pHwTyKiw">
@@ -144,13 +153,13 @@
           <type href="http://www.mpw.uni-stuttgart.de/mpw#//Location/column"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_V9ef4DGREeuDH7pHwTyKiw" name="self" outgoing="_XK2R8DGREeuDH7pHwTyKiw">
+      <nodes xmi:id="_V9ef4DGREeuDH7pHwTyKiw" name="self" outgoing="_wG0lsJh7EeuRaKZ4faWZzQ">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
       <edges xmi:id="_RQpkYDGREeuDH7pHwTyKiw" source="_j5NQYDGQEeuDH7pHwTyKiw" target="_O-_DwDGREeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
       </edges>
-      <edges xmi:id="_XK2R8DGREeuDH7pHwTyKiw" source="_V9ef4DGREeuDH7pHwTyKiw" target="_j5NQYDGQEeuDH7pHwTyKiw">
+      <edges xmi:id="_wG0lsJh7EeuRaKZ4faWZzQ" source="_V9ef4DGREeuDH7pHwTyKiw" target="_j5NQYDGQEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
       </edges>
       <formula xsi:type="henshin:Not" xmi:id="_uQMSUDGQEeuDH7pHwTyKiw">
@@ -159,7 +168,7 @@
             <nodes xmi:id="_f8lp0DGQEeuDH7pHwTyKiw" incoming="_wSRe0DGQEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
             </nodes>
-            <nodes xmi:id="_uQMSVTGQEeuDH7pHwTyKiw" name="tile" incoming="_XK2R8jGREeuDH7pHwTyKiw" outgoing="_wSRe0DGQEeuDH7pHwTyKiw _RQpkYjGREeuDH7pHwTyKiw">
+            <nodes xmi:id="_uQMSVTGQEeuDH7pHwTyKiw" name="tile" incoming="_wG0lsph7EeuRaKZ4faWZzQ" outgoing="_wSRe0DGQEeuDH7pHwTyKiw _RQpkYjGREeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
             </nodes>
             <nodes xmi:id="_O-_q0jGREeuDH7pHwTyKiw" incoming="_RQpkYjGREeuDH7pHwTyKiw">
@@ -171,7 +180,7 @@
                 <type href="http://www.mpw.uni-stuttgart.de/mpw#//Location/column"/>
               </attributes>
             </nodes>
-            <nodes xmi:id="_V9ef4zGREeuDH7pHwTyKiw" outgoing="_XK2R8jGREeuDH7pHwTyKiw">
+            <nodes xmi:id="_V9ef4zGREeuDH7pHwTyKiw" outgoing="_wG0lsph7EeuRaKZ4faWZzQ">
               <type href="../../model/Kara.ecore#//World"/>
             </nodes>
             <edges xmi:id="_wSRe0DGQEeuDH7pHwTyKiw" source="_uQMSVTGQEeuDH7pHwTyKiw" target="_f8lp0DGQEeuDH7pHwTyKiw">
@@ -180,7 +189,7 @@
             <edges xmi:id="_RQpkYjGREeuDH7pHwTyKiw" source="_uQMSVTGQEeuDH7pHwTyKiw" target="_O-_q0jGREeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
             </edges>
-            <edges xmi:id="_XK2R8jGREeuDH7pHwTyKiw" source="_V9ef4zGREeuDH7pHwTyKiw" target="_uQMSVTGQEeuDH7pHwTyKiw">
+            <edges xmi:id="_wG0lsph7EeuRaKZ4faWZzQ" source="_V9ef4zGREeuDH7pHwTyKiw" target="_uQMSVTGQEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
             </edges>
           </conclusion>
@@ -191,10 +200,10 @@
       </formula>
     </lhs>
     <rhs xmi:id="_bvmsATGQEeuDH7pHwTyKiw" name="Rhs">
-      <nodes xmi:id="_j5NQYTGQEeuDH7pHwTyKiw" name="tile" incoming="_XK2R8TGREeuDH7pHwTyKiw" outgoing="_RQpkYTGREeuDH7pHwTyKiw _UJ-h8DGREeuDH7pHwTyKiw">
+      <nodes xmi:id="_j5NQYTGQEeuDH7pHwTyKiw" incoming="_wG0lsZh7EeuRaKZ4faWZzQ" outgoing="_RQpkYTGREeuDH7pHwTyKiw _UJ-h8DGREeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
-      <nodes xmi:id="__JrX8DGQEeuDH7pHwTyKiw" name="newTile" incoming="_UJ-h8DGREeuDH7pHwTyKiw _OSxEQDIQEeuu_uKvvP5GUQ" outgoing="_MPglwDGREeuDH7pHwTyKiw">
+      <nodes xmi:id="__JrX8DGQEeuDH7pHwTyKiw" name="firstInRow" incoming="_UJ-h8DGREeuDH7pHwTyKiw _tykrIJh7EeuRaKZ4faWZzQ" outgoing="_MPglwDGREeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
       <nodes xmi:id="_HiKF0DGREeuDH7pHwTyKiw" name="newLocation" incoming="_MPglwDGREeuDH7pHwTyKiw">
@@ -212,7 +221,7 @@
           <type href="http://www.mpw.uni-stuttgart.de/mpw#//Location/column"/>
         </attributes>
       </nodes>
-      <nodes xmi:id="_V9ef4TGREeuDH7pHwTyKiw" name="self" outgoing="_XK2R8TGREeuDH7pHwTyKiw _OSxEQDIQEeuu_uKvvP5GUQ">
+      <nodes xmi:id="_V9ef4TGREeuDH7pHwTyKiw" name="self" outgoing="_tykrIJh7EeuRaKZ4faWZzQ _wG0lsZh7EeuRaKZ4faWZzQ">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
       <edges xmi:id="_MPglwDGREeuDH7pHwTyKiw" source="__JrX8DGQEeuDH7pHwTyKiw" target="_HiKF0DGREeuDH7pHwTyKiw">
@@ -224,10 +233,10 @@
       <edges xmi:id="_UJ-h8DGREeuDH7pHwTyKiw" source="_j5NQYTGQEeuDH7pHwTyKiw" target="__JrX8DGQEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/south"/>
       </edges>
-      <edges xmi:id="_XK2R8TGREeuDH7pHwTyKiw" source="_V9ef4TGREeuDH7pHwTyKiw" target="_j5NQYTGQEeuDH7pHwTyKiw">
+      <edges xmi:id="_tykrIJh7EeuRaKZ4faWZzQ" source="_V9ef4TGREeuDH7pHwTyKiw" target="__JrX8DGQEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
       </edges>
-      <edges xmi:id="_OSxEQDIQEeuu_uKvvP5GUQ" source="_V9ef4TGREeuDH7pHwTyKiw" target="__JrX8DGQEeuDH7pHwTyKiw">
+      <edges xmi:id="_wG0lsZh7EeuRaKZ4faWZzQ" source="_V9ef4TGREeuDH7pHwTyKiw" target="_j5NQYTGQEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
       </edges>
     </rhs>
@@ -236,6 +245,9 @@
     <mappings xmi:id="_V9ef4jGREeuDH7pHwTyKiw" origin="_V9ef4DGREeuDH7pHwTyKiw" image="_V9ef4TGREeuDH7pHwTyKiw"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_cb5U0DGREeuDH7pHwTyKiw" name="createFurtherRowTile">
+    <parameters xmi:id="_wCgL0JVZEeuAPM8vXiTh3g" name="next" kind="INOUT">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
     <parameters xmi:id="_vGQiMDGREeuDH7pHwTyKiw" name="x" kind="VAR">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
@@ -243,10 +255,10 @@
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
     <lhs xmi:id="_cb7KADGREeuDH7pHwTyKiw" name="Lhs">
-      <nodes xmi:id="_jgBe4DGREeuDH7pHwTyKiw" name="self" outgoing="_oHlf4DGREeuDH7pHwTyKiw">
+      <nodes xmi:id="_jgBe4DGREeuDH7pHwTyKiw" name="self" outgoing="_0LAM0Jh7EeuRaKZ4faWZzQ">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
-      <nodes xmi:id="_k5l54DGREeuDH7pHwTyKiw" name="tile" incoming="_oHlf4DGREeuDH7pHwTyKiw" outgoing="_nTRHADGREeuDH7pHwTyKiw _CKtDgDGSEeuDH7pHwTyKiw">
+      <nodes xmi:id="_k5l54DGREeuDH7pHwTyKiw" name="next" incoming="_0LAM0Jh7EeuRaKZ4faWZzQ" outgoing="_nTRHADGREeuDH7pHwTyKiw _CKtDgDGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
       <nodes xmi:id="_l1ndQDGREeuDH7pHwTyKiw" incoming="_nTRHADGREeuDH7pHwTyKiw">
@@ -267,22 +279,22 @@
       <edges xmi:id="_nTRHADGREeuDH7pHwTyKiw" source="_k5l54DGREeuDH7pHwTyKiw" target="_l1ndQDGREeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
       </edges>
-      <edges xmi:id="_oHlf4DGREeuDH7pHwTyKiw" source="_jgBe4DGREeuDH7pHwTyKiw" target="_k5l54DGREeuDH7pHwTyKiw">
-        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
-      </edges>
       <edges xmi:id="_CKtDgDGSEeuDH7pHwTyKiw" source="_k5l54DGREeuDH7pHwTyKiw" target="_A9YUwDGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/north"/>
       </edges>
       <edges xmi:id="_GJcJ8DGSEeuDH7pHwTyKiw" source="_A9YUwDGSEeuDH7pHwTyKiw" target="_D4O8UDGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/east"/>
       </edges>
+      <edges xmi:id="_0LAM0Jh7EeuRaKZ4faWZzQ" source="_jgBe4DGREeuDH7pHwTyKiw" target="_k5l54DGREeuDH7pHwTyKiw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
+      </edges>
       <formula xsi:type="henshin:Not" xmi:id="_9R5hgDGREeuDH7pHwTyKiw">
         <child xsi:type="henshin:NestedCondition" xmi:id="_9R5hgTGREeuDH7pHwTyKiw">
           <conclusion xmi:id="_9R5hgjGREeuDH7pHwTyKiw">
-            <nodes xmi:id="_9R5hgzGREeuDH7pHwTyKiw" name="this" outgoing="_9R6IkjGREeuDH7pHwTyKiw">
+            <nodes xmi:id="_9R5hgzGREeuDH7pHwTyKiw" name="this" outgoing="_0LAM0ph7EeuRaKZ4faWZzQ">
               <type href="../../model/Kara.ecore#//World"/>
             </nodes>
-            <nodes xmi:id="_9R6IkDGREeuDH7pHwTyKiw" name="tile" incoming="_9R6IkjGREeuDH7pHwTyKiw" outgoing="_9R6IlzGREeuDH7pHwTyKiw _5Rx7ADGREeuDH7pHwTyKiw _7ZcLEDGREeuDH7pHwTyKiw _CKtqkDGSEeuDH7pHwTyKiw">
+            <nodes xmi:id="_9R6IkDGREeuDH7pHwTyKiw" name="tile" incoming="_0LAM0ph7EeuRaKZ4faWZzQ" outgoing="_9R6IlzGREeuDH7pHwTyKiw _5Rx7ADGREeuDH7pHwTyKiw _7ZcLEDGREeuDH7pHwTyKiw _CKtqkDGSEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
             </nodes>
             <nodes xmi:id="_9R6IkzGREeuDH7pHwTyKiw" incoming="_9R6IlzGREeuDH7pHwTyKiw">
@@ -306,9 +318,6 @@
             <nodes xmi:id="_IS5JwzGSEeuDH7pHwTyKiw" name="northEast" incoming="_IS5JxTGSEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
             </nodes>
-            <edges xmi:id="_9R6IkjGREeuDH7pHwTyKiw" source="_9R5hgzGREeuDH7pHwTyKiw" target="_9R6IkDGREeuDH7pHwTyKiw">
-              <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
-            </edges>
             <edges xmi:id="_9R6IlzGREeuDH7pHwTyKiw" source="_9R6IkDGREeuDH7pHwTyKiw" target="_9R6IkzGREeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
             </edges>
@@ -324,6 +333,9 @@
             <edges xmi:id="_IS5JxTGSEeuDH7pHwTyKiw" source="_A9aJ8jGSEeuDH7pHwTyKiw" target="_IS5JwzGSEeuDH7pHwTyKiw">
               <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/east"/>
             </edges>
+            <edges xmi:id="_0LAM0ph7EeuRaKZ4faWZzQ" source="_9R5hgzGREeuDH7pHwTyKiw" target="_9R6IkDGREeuDH7pHwTyKiw">
+              <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
+            </edges>
           </conclusion>
           <mappings xmi:id="_9R5hhDGREeuDH7pHwTyKiw" origin="_jgBe4DGREeuDH7pHwTyKiw" image="_9R5hgzGREeuDH7pHwTyKiw"/>
           <mappings xmi:id="_9R6IkTGREeuDH7pHwTyKiw" origin="_k5l54DGREeuDH7pHwTyKiw" image="_9R6IkDGREeuDH7pHwTyKiw"/>
@@ -334,10 +346,10 @@
       </formula>
     </lhs>
     <rhs xmi:id="_cb7KATGREeuDH7pHwTyKiw" name="Rhs">
-      <nodes xmi:id="_jgDUEDGREeuDH7pHwTyKiw" name="self" outgoing="_oHlf4TGREeuDH7pHwTyKiw _NQRpwDGSEeuDH7pHwTyKiw">
+      <nodes xmi:id="_jgDUEDGREeuDH7pHwTyKiw" name="self" outgoing="_0LAM0Zh7EeuRaKZ4faWZzQ _1KD2EJh7EeuRaKZ4faWZzQ">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
-      <nodes xmi:id="_k5mg8DGREeuDH7pHwTyKiw" name="tile" incoming="_oHlf4TGREeuDH7pHwTyKiw" outgoing="_nTRHATGREeuDH7pHwTyKiw _CKtDgTGSEeuDH7pHwTyKiw _SDp5MDGSEeuDH7pHwTyKiw">
+      <nodes xmi:id="_k5mg8DGREeuDH7pHwTyKiw" incoming="_0LAM0Zh7EeuRaKZ4faWZzQ" outgoing="_nTRHATGREeuDH7pHwTyKiw _CKtDgTGSEeuDH7pHwTyKiw _SDp5MDGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
       <nodes xmi:id="_l1ndQTGREeuDH7pHwTyKiw" incoming="_nTRHATGREeuDH7pHwTyKiw">
@@ -355,7 +367,7 @@
       <nodes xmi:id="_IS5JwDGSEeuDH7pHwTyKiw" name="northEast" incoming="_IS5JwjGSEeuDH7pHwTyKiw" outgoing="_PRLKgDGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
-      <nodes xmi:id="_L1HTUDGSEeuDH7pHwTyKiw" name="newTile" incoming="_NQRpwDGSEeuDH7pHwTyKiw _PRLKgDGSEeuDH7pHwTyKiw _SDp5MDGSEeuDH7pHwTyKiw" outgoing="_WgeCwDGSEeuDH7pHwTyKiw">
+      <nodes xmi:id="_L1HTUDGSEeuDH7pHwTyKiw" name="next" incoming="_PRLKgDGSEeuDH7pHwTyKiw _SDp5MDGSEeuDH7pHwTyKiw _1KD2EJh7EeuRaKZ4faWZzQ" outgoing="_WgeCwDGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
       </nodes>
       <nodes xmi:id="_UiIt0DGSEeuDH7pHwTyKiw" name="newLocation" incoming="_WgeCwDGSEeuDH7pHwTyKiw">
@@ -370,17 +382,11 @@
       <edges xmi:id="_nTRHATGREeuDH7pHwTyKiw" source="_k5mg8DGREeuDH7pHwTyKiw" target="_l1ndQTGREeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
       </edges>
-      <edges xmi:id="_oHlf4TGREeuDH7pHwTyKiw" source="_jgDUEDGREeuDH7pHwTyKiw" target="_k5mg8DGREeuDH7pHwTyKiw">
-        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
-      </edges>
       <edges xmi:id="_CKtDgTGSEeuDH7pHwTyKiw" source="_k5mg8DGREeuDH7pHwTyKiw" target="_A9aJ8DGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/north"/>
       </edges>
       <edges xmi:id="_IS5JwjGSEeuDH7pHwTyKiw" source="_A9aJ8DGSEeuDH7pHwTyKiw" target="_IS5JwDGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/east"/>
-      </edges>
-      <edges xmi:id="_NQRpwDGSEeuDH7pHwTyKiw" source="_jgDUEDGREeuDH7pHwTyKiw" target="_L1HTUDGSEeuDH7pHwTyKiw">
-        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
       </edges>
       <edges xmi:id="_PRLKgDGSEeuDH7pHwTyKiw" source="_IS5JwDGSEeuDH7pHwTyKiw" target="_L1HTUDGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/south"/>
@@ -391,6 +397,12 @@
       <edges xmi:id="_WgeCwDGSEeuDH7pHwTyKiw" source="_L1HTUDGSEeuDH7pHwTyKiw" target="_UiIt0DGSEeuDH7pHwTyKiw">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/location"/>
       </edges>
+      <edges xmi:id="_0LAM0Zh7EeuRaKZ4faWZzQ" source="_jgDUEDGREeuDH7pHwTyKiw" target="_k5mg8DGREeuDH7pHwTyKiw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
+      </edges>
+      <edges xmi:id="_1KD2EJh7EeuRaKZ4faWZzQ" source="_jgDUEDGREeuDH7pHwTyKiw" target="_L1HTUDGSEeuDH7pHwTyKiw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
+      </edges>
     </rhs>
     <mappings xmi:id="_jgDUETGREeuDH7pHwTyKiw" origin="_jgBe4DGREeuDH7pHwTyKiw" image="_jgDUEDGREeuDH7pHwTyKiw"/>
     <mappings xmi:id="_k5mg8TGREeuDH7pHwTyKiw" origin="_k5l54DGREeuDH7pHwTyKiw" image="_k5mg8DGREeuDH7pHwTyKiw"/>
@@ -398,7 +410,7 @@
     <mappings xmi:id="_A9aJ8TGSEeuDH7pHwTyKiw" origin="_A9YUwDGSEeuDH7pHwTyKiw" image="_A9aJ8DGSEeuDH7pHwTyKiw"/>
     <mappings xmi:id="_IS5JwTGSEeuDH7pHwTyKiw" origin="_D4O8UDGSEeuDH7pHwTyKiw" image="_IS5JwDGSEeuDH7pHwTyKiw"/>
   </units>
-  <units xsi:type="henshin:SequentialUnit" xmi:id="_fTAPYDGSEeuDH7pHwTyKiw" name="initWorld" subUnits="_R6N7QDGQEeuDH7pHwTyKiw _qWt0cDGSEeuDH7pHwTyKiw _v4HAcDGSEeuDH7pHwTyKiw _m9tbsDf9Eeu0KvmSgTDkRg">
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_fTAPYDGSEeuDH7pHwTyKiw" name="initWorld" subUnits="_DNXQIHIZEeu85cU8d0uOUw _m9tbsDf9Eeu0KvmSgTDkRg _R6N7QDGQEeuDH7pHwTyKiw _qWt0cDGSEeuDH7pHwTyKiw _v4HAcDGSEeuDH7pHwTyKiw">
     <parameters xmi:id="_frM3gDGTEeuDH7pHwTyKiw" name="self" kind="IN">
       <type xsi:type="ecore:EClass" href="../../model/Kara.ecore#//World"/>
     </parameters>
@@ -408,43 +420,74 @@
     <parameters xmi:id="_iqfvojGSEeuDH7pHwTyKiw" name="rows" kind="IN">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
-    <parameterMappings xmi:id="_uohn4DGSEeuDH7pHwTyKiw" source="_iqfvoTGSEeuDH7pHwTyKiw" target="_sylZ8DGSEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_uohn4TGSEeuDH7pHwTyKiw" source="_sylZ8DGSEeuDH7pHwTyKiw" target="_iqfvoTGSEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_zhVJ4DGSEeuDH7pHwTyKiw" source="_iqfvoTGSEeuDH7pHwTyKiw" target="_xJcsgDGSEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_zhVJ4TGSEeuDH7pHwTyKiw" source="_xJcsgDGSEeuDH7pHwTyKiw" target="_iqfvoTGSEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_zhVJ4jGSEeuDH7pHwTyKiw" source="_iqfvojGSEeuDH7pHwTyKiw" target="_xJcsgTGSEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_zhVJ4zGSEeuDH7pHwTyKiw" source="_xJcsgTGSEeuDH7pHwTyKiw" target="_iqfvojGSEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_tDu-wDf9Eeu0KvmSgTDkRg" source="_iqfvoTGSEeuDH7pHwTyKiw" target="_qbyFEDf9Eeu0KvmSgTDkRg"/>
-    <parameterMappings xmi:id="_tDu-wTf9Eeu0KvmSgTDkRg" source="_qbyFEDf9Eeu0KvmSgTDkRg" target="_iqfvoTGSEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_tDu-wjf9Eeu0KvmSgTDkRg" source="_iqfvojGSEeuDH7pHwTyKiw" target="_qbyFETf9Eeu0KvmSgTDkRg"/>
-    <parameterMappings xmi:id="_tDu-wzf9Eeu0KvmSgTDkRg" source="_qbyFETf9Eeu0KvmSgTDkRg" target="_iqfvojGSEeuDH7pHwTyKiw"/>
+    <parameters xmi:id="_CVKnsJVWEeuAPM8vXiTh3g" name="firstInRow" kind="VAR">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
+    <parameterMappings xmi:id="_lofpEIurEeuQHPUNBEJHXA" source="_iqfvoTGSEeuDH7pHwTyKiw" target="_qbyFEDf9Eeu0KvmSgTDkRg"/>
+    <parameterMappings xmi:id="_logQIIurEeuQHPUNBEJHXA" source="_qbyFEDf9Eeu0KvmSgTDkRg" target="_iqfvoTGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_logQIYurEeuQHPUNBEJHXA" source="_iqfvojGSEeuDH7pHwTyKiw" target="_qbyFETf9Eeu0KvmSgTDkRg"/>
+    <parameterMappings xmi:id="_logQIourEeuQHPUNBEJHXA" source="_qbyFETf9Eeu0KvmSgTDkRg" target="_iqfvojGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_nq0AwJVcEeuAPM8vXiTh3g" source="_CVKnsJVWEeuAPM8vXiTh3g" target="_AWGyoJVZEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_nq1O4JVcEeuAPM8vXiTh3g" source="_AWGyoJVZEeuAPM8vXiTh3g" target="_CVKnsJVWEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_nq1O4ZVcEeuAPM8vXiTh3g" source="_iqfvoTGSEeuDH7pHwTyKiw" target="_xJcsgDGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_nq1O4pVcEeuAPM8vXiTh3g" source="_xJcsgDGSEeuDH7pHwTyKiw" target="_iqfvoTGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_nq1O45VcEeuAPM8vXiTh3g" source="_iqfvojGSEeuDH7pHwTyKiw" target="_xJcsgTGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_nq1O5JVcEeuAPM8vXiTh3g" source="_xJcsgTGSEeuDH7pHwTyKiw" target="_iqfvojGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_2jPNsJZFEeuAPM8vXiTh3g" source="_CVKnsJVWEeuAPM8vXiTh3g" target="__L04MJVVEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_2jPNsZZFEeuAPM8vXiTh3g" source="__L04MJVVEeuAPM8vXiTh3g" target="_CVKnsJVWEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_dKORkJb2EeuAPM8vXiTh3g" source="_iqfvoTGSEeuDH7pHwTyKiw" target="_sylZ8DGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_dKORkZb2EeuAPM8vXiTh3g" source="_sylZ8DGSEeuDH7pHwTyKiw" target="_iqfvoTGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_dKORkpb2EeuAPM8vXiTh3g" source="_CVKnsJVWEeuAPM8vXiTh3g" target="_hxYvQJVcEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_dKORk5b2EeuAPM8vXiTh3g" source="_hxYvQJVcEeuAPM8vXiTh3g" target="_CVKnsJVWEeuAPM8vXiTh3g"/>
   </units>
   <units xsi:type="henshin:IteratedUnit" xmi:id="_qWt0cDGSEeuDH7pHwTyKiw" name="createFirstRow" subUnit="_KqqZwDGPEeuDH7pHwTyKiw" iterations="columns-1">
     <parameters xmi:id="_sylZ8DGSEeuDH7pHwTyKiw" name="columns" kind="IN">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
+    <parameters xmi:id="_hxYvQJVcEeuAPM8vXiTh3g" name="next" kind="IN">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
+    <parameterMappings xmi:id="_brSeQJVdEeuAPM8vXiTh3g" source="_hxYvQJVcEeuAPM8vXiTh3g" target="_67o1YJVVEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_brUTcJVdEeuAPM8vXiTh3g" source="_67o1YJVVEeuAPM8vXiTh3g" target="_hxYvQJVcEeuAPM8vXiTh3g"/>
   </units>
   <units xsi:type="henshin:IteratedUnit" xmi:id="_v4HAcDGSEeuDH7pHwTyKiw" name="createFurtherRows" subUnit="_8E67kDGSEeuDH7pHwTyKiw" iterations="rows-1">
+    <parameters xmi:id="_AWGyoJVZEeuAPM8vXiTh3g" name="firstInRow" kind="INOUT">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
     <parameters xmi:id="_xJcsgDGSEeuDH7pHwTyKiw" name="columns" kind="IN">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
     <parameters xmi:id="_xJcsgTGSEeuDH7pHwTyKiw" name="rows" kind="IN">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
-    <parameterMappings xmi:id="_Aic20DGTEeuDH7pHwTyKiw" source="_xJcsgDGSEeuDH7pHwTyKiw" target="_8R1WMDGSEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_Aic20TGTEeuDH7pHwTyKiw" source="_8R1WMDGSEeuDH7pHwTyKiw" target="_xJcsgDGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_PQKXIJVZEeuAPM8vXiTh3g" source="_AWGyoJVZEeuAPM8vXiTh3g" target="_ObFJQJVZEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_PQKXIZVZEeuAPM8vXiTh3g" source="_ObFJQJVZEeuAPM8vXiTh3g" target="_AWGyoJVZEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_PQKXIpVZEeuAPM8vXiTh3g" source="_xJcsgDGSEeuDH7pHwTyKiw" target="_8R1WMDGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_PQKXI5VZEeuAPM8vXiTh3g" source="_8R1WMDGSEeuDH7pHwTyKiw" target="_xJcsgDGSEeuDH7pHwTyKiw"/>
   </units>
   <units xsi:type="henshin:SequentialUnit" xmi:id="_8E67kDGSEeuDH7pHwTyKiw" name="createFurtherRow" subUnits="_bvk20DGQEeuDH7pHwTyKiw _JSGukDGTEeuDH7pHwTyKiw">
+    <parameters xmi:id="_ObFJQJVZEeuAPM8vXiTh3g" name="firstInRow" kind="INOUT">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
     <parameters xmi:id="_8R1WMDGSEeuDH7pHwTyKiw" name="columns" kind="IN">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
-    <parameterMappings xmi:id="_PEMpADGTEeuDH7pHwTyKiw" source="_8R1WMDGSEeuDH7pHwTyKiw" target="_Jnr9ADGTEeuDH7pHwTyKiw"/>
-    <parameterMappings xmi:id="_PEMpATGTEeuDH7pHwTyKiw" source="_Jnr9ADGTEeuDH7pHwTyKiw" target="_8R1WMDGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_ClzH4JVaEeuAPM8vXiTh3g" source="_ObFJQJVZEeuAPM8vXiTh3g" target="_UQv8IJVZEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_Clzu8JVaEeuAPM8vXiTh3g" source="_UQv8IJVZEeuAPM8vXiTh3g" target="_ObFJQJVZEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_htAwIJVdEeuAPM8vXiTh3g" source="_8R1WMDGSEeuDH7pHwTyKiw" target="_Jnr9ADGTEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_htAwIZVdEeuAPM8vXiTh3g" source="_Jnr9ADGTEeuDH7pHwTyKiw" target="_8R1WMDGSEeuDH7pHwTyKiw"/>
+    <parameterMappings xmi:id="_htAwIpVdEeuAPM8vXiTh3g" source="_ObFJQJVZEeuAPM8vXiTh3g" target="_gr8UsJVdEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_htAwI5VdEeuAPM8vXiTh3g" source="_gr8UsJVdEeuAPM8vXiTh3g" target="_ObFJQJVZEeuAPM8vXiTh3g"/>
   </units>
   <units xsi:type="henshin:IteratedUnit" xmi:id="_JSGukDGTEeuDH7pHwTyKiw" name="createFurtherRowTiles" subUnit="_cb5U0DGREeuDH7pHwTyKiw" iterations="columns-1">
     <parameters xmi:id="_Jnr9ADGTEeuDH7pHwTyKiw" name="columns" kind="IN">
       <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </parameters>
+    <parameters xmi:id="_gr8UsJVdEeuAPM8vXiTh3g" name="next" kind="IN">
+      <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+    </parameters>
+    <parameterMappings xmi:id="_9zIi4JZFEeuAPM8vXiTh3g" source="_gr8UsJVdEeuAPM8vXiTh3g" target="_wCgL0JVZEeuAPM8vXiTh3g"/>
+    <parameterMappings xmi:id="_9zKYEJZFEeuAPM8vXiTh3g" source="_wCgL0JVZEeuAPM8vXiTh3g" target="_gr8UsJVdEeuAPM8vXiTh3g"/>
   </units>
   <units xsi:type="henshin:Rule" xmi:id="_m9tbsDf9Eeu0KvmSgTDkRg" name="setSize">
     <parameters xmi:id="_qbyFEDf9Eeu0KvmSgTDkRg" name="columns" kind="IN">
@@ -459,10 +502,10 @@
       </nodes>
     </lhs>
     <rhs xmi:id="_m9up0Tf9Eeu0KvmSgTDkRg" name="Rhs">
-      <nodes xmi:id="_uay4UDf9Eeu0KvmSgTDkRg" name="self" outgoing="_GsECgFHWEeuLJbiulVkCVQ">
+      <nodes xmi:id="_uay4UDf9Eeu0KvmSgTDkRg" name="self" outgoing="_iQ4JkJh7EeuRaKZ4faWZzQ">
         <type href="../../model/Kara.ecore#//World"/>
       </nodes>
-      <nodes xmi:id="_8qB84FHVEeuLJbiulVkCVQ" incoming="_GsECgFHWEeuLJbiulVkCVQ">
+      <nodes xmi:id="_8qB84FHVEeuLJbiulVkCVQ" incoming="_iQ4JkJh7EeuRaKZ4faWZzQ">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Size"/>
         <attributes xmi:id="_O4xlQFHWEeuLJbiulVkCVQ" value="columns">
           <type href="http://www.mpw.uni-stuttgart.de/mpw#//Size/columnCount"/>
@@ -471,10 +514,127 @@
           <type href="http://www.mpw.uni-stuttgart.de/mpw#//Size/rowCount"/>
         </attributes>
       </nodes>
-      <edges xmi:id="_GsECgFHWEeuLJbiulVkCVQ" source="_uay4UDf9Eeu0KvmSgTDkRg" target="_8qB84FHVEeuLJbiulVkCVQ">
+      <edges xmi:id="_iQ4JkJh7EeuRaKZ4faWZzQ" source="_uay4UDf9Eeu0KvmSgTDkRg" target="_8qB84FHVEeuLJbiulVkCVQ">
         <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/stageSize"/>
       </edges>
     </rhs>
     <mappings xmi:id="_uay4UTf9Eeu0KvmSgTDkRg" origin="_uaxqMDf9Eeu0KvmSgTDkRg" image="_uay4UDf9Eeu0KvmSgTDkRg"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_aRfIgHIYEeu85cU8d0uOUw" name="clearTiles">
+    <lhs xmi:id="_aRw1UHIYEeu85cU8d0uOUw" name="Lhs">
+      <nodes xmi:id="_hoz7YHIYEeu85cU8d0uOUw" name="self">
+        <type href="../../model/Kara.ecore#//World"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_aRw1UXIYEeu85cU8d0uOUw" name="Rhs">
+      <nodes xmi:id="_hoz7YXIYEeu85cU8d0uOUw" name="self">
+        <type href="../../model/Kara.ecore#//World"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_hoz7YnIYEeu85cU8d0uOUw" origin="_hoz7YHIYEeu85cU8d0uOUw" image="_hoz7YXIYEeu85cU8d0uOUw"/>
+    <multiRules xmi:id="_ndf20HIYEeu85cU8d0uOUw">
+      <lhs xmi:id="_ndgd4HIYEeu85cU8d0uOUw" name="Lhs">
+        <nodes xmi:id="_ndgd5HIYEeu85cU8d0uOUw" name="self" outgoing="_WcZ18Jh7EeuRaKZ4faWZzQ _Xh6sgJh7EeuRaKZ4faWZzQ">
+          <type href="../../model/Kara.ecore#//World"/>
+        </nodes>
+        <nodes xmi:id="_kQS7AHIYEeu85cU8d0uOUw" incoming="_Xh6sgJh7EeuRaKZ4faWZzQ">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//TileContent"/>
+        </nodes>
+        <nodes xmi:id="_15nFoHIZEeu85cU8d0uOUw" incoming="_WcZ18Jh7EeuRaKZ4faWZzQ">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+        </nodes>
+        <edges xmi:id="_WcZ18Jh7EeuRaKZ4faWZzQ" source="_ndgd5HIYEeu85cU8d0uOUw" target="_15nFoHIZEeu85cU8d0uOUw">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tiles"/>
+        </edges>
+        <edges xmi:id="_Xh6sgJh7EeuRaKZ4faWZzQ" source="_ndgd5HIYEeu85cU8d0uOUw" target="_kQS7AHIYEeu85cU8d0uOUw">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Stage/tileContents"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_ndgd4XIYEeu85cU8d0uOUw" name="Rhs">
+        <nodes xmi:id="_ndgd4nIYEeu85cU8d0uOUw" name="self">
+          <type href="../../model/Kara.ecore#//World"/>
+        </nodes>
+      </rhs>
+      <mappings xmi:id="_ndgd6XIYEeu85cU8d0uOUw" origin="_ndgd5HIYEeu85cU8d0uOUw" image="_ndgd4nIYEeu85cU8d0uOUw"/>
+      <multiMappings xmi:id="_ndgd43IYEeu85cU8d0uOUw" origin="_hoz7YXIYEeu85cU8d0uOUw" image="_ndgd4nIYEeu85cU8d0uOUw"/>
+      <multiMappings xmi:id="_ndgd5XIYEeu85cU8d0uOUw" origin="_hoz7YHIYEeu85cU8d0uOUw" image="_ndgd5HIYEeu85cU8d0uOUw"/>
+    </multiRules>
+  </units>
+  <units xsi:type="henshin:ConditionalUnit" xmi:id="_DNXQIHIZEeu85cU8d0uOUw" name="clearWorld" if="_ezrr4HIZEeu85cU8d0uOUw" then="_umxKIHIZEeu85cU8d0uOUw" else="_aRfIgHIYEeu85cU8d0uOUw"/>
+  <units xsi:type="henshin:Rule" xmi:id="_ezrr4HIZEeu85cU8d0uOUw" name="karaIsOnTile">
+    <lhs xmi:id="_ezv9UHIZEeu85cU8d0uOUw" name="Lhs">
+      <nodes xmi:id="_g8o8cHIZEeu85cU8d0uOUw" name="self" outgoing="_ieSVYHIZEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//World"/>
+      </nodes>
+      <nodes xmi:id="_hlzOMHIZEeu85cU8d0uOUw" incoming="_ieSVYHIZEeu85cU8d0uOUw" outgoing="_R9ezkJh7EeuRaKZ4faWZzQ">
+        <type href="../../model/Kara.ecore#//Kara"/>
+      </nodes>
+      <nodes xmi:id="_jtVicHIZEeu85cU8d0uOUw" incoming="_R9ezkJh7EeuRaKZ4faWZzQ">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+      </nodes>
+      <edges xmi:id="_ieSVYHIZEeu85cU8d0uOUw" source="_g8o8cHIZEeu85cU8d0uOUw" target="_hlzOMHIZEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//World/kara"/>
+      </edges>
+      <edges xmi:id="_R9ezkJh7EeuRaKZ4faWZzQ" source="_hlzOMHIZEeu85cU8d0uOUw" target="_jtVicHIZEeu85cU8d0uOUw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//TileContent/currentTile"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_ezv9UXIZEeu85cU8d0uOUw" name="Rhs">
+      <nodes xmi:id="_g8pjgHIZEeu85cU8d0uOUw" name="self" outgoing="_ieSVYXIZEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//World"/>
+      </nodes>
+      <nodes xmi:id="_hlzOMXIZEeu85cU8d0uOUw" incoming="_ieSVYXIZEeu85cU8d0uOUw" outgoing="_R9ezkZh7EeuRaKZ4faWZzQ">
+        <type href="../../model/Kara.ecore#//Kara"/>
+      </nodes>
+      <nodes xmi:id="_jtVicXIZEeu85cU8d0uOUw" incoming="_R9ezkZh7EeuRaKZ4faWZzQ">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+      </nodes>
+      <edges xmi:id="_ieSVYXIZEeu85cU8d0uOUw" source="_g8pjgHIZEeu85cU8d0uOUw" target="_hlzOMXIZEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//World/kara"/>
+      </edges>
+      <edges xmi:id="_R9ezkZh7EeuRaKZ4faWZzQ" source="_hlzOMXIZEeu85cU8d0uOUw" target="_jtVicXIZEeu85cU8d0uOUw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//TileContent/currentTile"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_g8pjgXIZEeu85cU8d0uOUw" origin="_g8o8cHIZEeu85cU8d0uOUw" image="_g8pjgHIZEeu85cU8d0uOUw"/>
+    <mappings xmi:id="_hlzOMnIZEeu85cU8d0uOUw" origin="_hlzOMHIZEeu85cU8d0uOUw" image="_hlzOMXIZEeu85cU8d0uOUw"/>
+    <mappings xmi:id="_jtVicnIZEeu85cU8d0uOUw" origin="_jtVicHIZEeu85cU8d0uOUw" image="_jtVicXIZEeu85cU8d0uOUw"/>
+  </units>
+  <units xsi:type="henshin:SequentialUnit" xmi:id="_umxKIHIZEeu85cU8d0uOUw" name="clearKaraAndTiles" subUnits="_DZBREHIaEeu85cU8d0uOUw _aRfIgHIYEeu85cU8d0uOUw"/>
+  <units xsi:type="henshin:Rule" xmi:id="_DZBREHIaEeu85cU8d0uOUw" name="resetKaraTile">
+    <lhs xmi:id="_DZE7cHIaEeu85cU8d0uOUw" name="Lhs">
+      <nodes xmi:id="_FecsgHIaEeu85cU8d0uOUw" name="self" outgoing="_H0jBMHIaEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//World"/>
+      </nodes>
+      <nodes xmi:id="_Gf9M0HIaEeu85cU8d0uOUw" incoming="_H0jBMHIaEeu85cU8d0uOUw" outgoing="_ebOGoJh7EeuRaKZ4faWZzQ">
+        <type href="../../model/Kara.ecore#//Kara"/>
+      </nodes>
+      <nodes xmi:id="_IzpGsHIaEeu85cU8d0uOUw" incoming="_ebOGoJh7EeuRaKZ4faWZzQ">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+      </nodes>
+      <edges xmi:id="_H0jBMHIaEeu85cU8d0uOUw" source="_FecsgHIaEeu85cU8d0uOUw" target="_Gf9M0HIaEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//World/kara"/>
+      </edges>
+      <edges xmi:id="_ebOGoJh7EeuRaKZ4faWZzQ" source="_Gf9M0HIaEeu85cU8d0uOUw" target="_IzpGsHIaEeu85cU8d0uOUw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//TileContent/currentTile"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_DZE7cXIaEeu85cU8d0uOUw" name="Rhs">
+      <nodes xmi:id="_FecsgXIaEeu85cU8d0uOUw" name="self" outgoing="_H0jBMXIaEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//World"/>
+      </nodes>
+      <nodes xmi:id="_Gf9M0XIaEeu85cU8d0uOUw" incoming="_H0jBMXIaEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//Kara"/>
+      </nodes>
+      <nodes xmi:id="_IzpGsXIaEeu85cU8d0uOUw">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+      </nodes>
+      <edges xmi:id="_H0jBMXIaEeu85cU8d0uOUw" source="_FecsgXIaEeu85cU8d0uOUw" target="_Gf9M0XIaEeu85cU8d0uOUw">
+        <type href="../../model/Kara.ecore#//World/kara"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_FecsgnIaEeu85cU8d0uOUw" origin="_FecsgHIaEeu85cU8d0uOUw" image="_FecsgXIaEeu85cU8d0uOUw"/>
+    <mappings xmi:id="_Gf9M0nIaEeu85cU8d0uOUw" origin="_Gf9M0HIaEeu85cU8d0uOUw" image="_Gf9M0XIaEeu85cU8d0uOUw"/>
+    <mappings xmi:id="_IzpGsnIaEeu85cU8d0uOUw" origin="_IzpGsHIaEeu85cU8d0uOUw" image="_IzpGsXIaEeu85cU8d0uOUw"/>
   </units>
 </henshin:Module>
