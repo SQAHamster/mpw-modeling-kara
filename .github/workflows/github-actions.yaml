@@ -1,4 +1,4 @@
-name: Java CI with Maven / CMake
+name: CI with Maven / CMake
 
 on:
   push:
@@ -68,16 +68,16 @@ jobs:
         run: git config user.email "mpw-deployment@users.noreply.github.com" && git config user.name "Deployment"
 
       # Deploy cpp-simulator to branch
-      #- name: switch to cpp simulator branch
-      #  run: git fetch && git checkout cpp-simulator-snapshot && git reset --hard 74be83085c54c29e2d554db2bf8942b49dde1a5d
-      #- name: cpp simulator branch core folder
-      #  run: |
-      #    git clean -ffd
-      #    rm -rf ./core && rm -rf ./ui && rm -rf ./main && rm -rf ./examples && rm -f CMakeLists.txt
-      #    cp -R ~/deploy-cpp-simulator-to-branch/core ./core
-      #    cp -R ~/deploy-cpp-simulator-to-branch/ui ./ui
-      #    cp -R ~/deploy-cpp-simulator-to-branch/main ./main
-      #    cp -R ~/deploy-cpp-simulator-to-branch/examples ./examples
-      #    cp ~/deploy-cpp-simulator-to-branch/CMakeLists.txt ./CMakeLists.txt
-      #- name: commit
-      #  run: git add -A && git commit -am 'C++ karasimulator code snapshot' && git push origin cpp-simulator-snapshot --force
+      - name: switch to cpp simulator branch
+        run: git fetch && git checkout cpp-simulator-snapshot && git reset --hard 8bc884256d8ba383a1d42ab61f1c662fa2e08935
+      - name: cpp simulator branch folders
+        run: |
+          git clean -ffd
+          rm -rf ./core && rm -rf ./ui && rm -rf ./main && rm -rf ./examples && rm -f CMakeLists.txt
+          cp -R ~/deploy-cpp-simulator-to-branch/core ./core
+          cp -R ~/deploy-cpp-simulator-to-branch/ui ./ui
+          cp -R ~/deploy-cpp-simulator-to-branch/main ./main
+          cp -R ~/deploy-cpp-simulator-to-branch/examples ./examples
+          cp ~/deploy-cpp-simulator-to-branch/CMakeLists.txt ./CMakeLists.txt
+      - name: commit
+        run: git add -A && git commit -am 'C++ karasimulator code snapshot' && git push origin cpp-simulator-snapshot --force
