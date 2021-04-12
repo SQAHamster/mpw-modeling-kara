@@ -1,3 +1,8 @@
-# Kara the ladybug - MPW Simulator
+# MPW Karasimulator (C++ Library)
 
-This is the modeled Kara MPW simulator example for the MPW Modeling Framework (https://github.com/Fumapps/mpw-modeling-framework)
+Branch used to provide a snapshot repository as a C++ source library.
+
+The C++ simulator is deployed by the source code directly. This is done like
+GTEST, where the source code gets pulled by CMake and compiled with the same compiler like
+the target program.
+CMake has built-in functionality to fetch the dependency from source (FetchContent).
