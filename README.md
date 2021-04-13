@@ -1,6 +1,6 @@
-# Kara the ladybug - MPW Simulator
+# Kara the Ladybug - MPW Simulator
 
-This is the modeled kara MPW simulator example based on the MPW framework (https://github.com/Fumapps/mpw-modeling-framework).
+This is the modeled kara MPW simulator example based on the MPW framework (https://github.com/SQAHamster/mpw-modeling-framework).
 
 ![modeling approach](documentation/graphics/mdsd-approach-concrete-simulator.svg)
 
