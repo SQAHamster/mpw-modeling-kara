@@ -3,7 +3,7 @@
     
     <groupId>de.unistuttgart.iste.sqa.mpw.modeling</groupId>
     <artifactId>de.unistuttgart.iste.sqa.mpw.modeling.karasimulator.parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Karasimulator Parent</name>
