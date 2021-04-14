@@ -10,6 +10,9 @@ protected:
 };
 
 void Example02::run() {
+    loadWorldFromResourceFile("resources/worlds/example02.ter");
+    startGame();
+    
     kara.turnRight();
 
     for (int i = 0; i < 3; i++) {

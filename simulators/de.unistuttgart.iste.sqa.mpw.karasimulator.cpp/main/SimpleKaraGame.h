@@ -19,7 +19,7 @@ class SimpleKaraGame {
 
 private:
 
-    const std::string DEFAULT_KARA_WORLD = "/worlds/example01.ter";
+    const std::string DEFAULT_KARA_WORLD = "worlds/example01.ter";
 
 public:
     template<typename T>
