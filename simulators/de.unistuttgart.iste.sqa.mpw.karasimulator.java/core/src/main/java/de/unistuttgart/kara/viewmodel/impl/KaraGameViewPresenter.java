@@ -1,5 +1,6 @@
 package de.unistuttgart.kara.viewmodel.impl;
 
+import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Direction;
 import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Size;
 import de.unistuttgart.iste.sqa.mpw.framework.mpw.Tile;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCell;
@@ -13,11 +14,13 @@ import de.unistuttgart.kara.kara.ReadOnlyKara;
 import de.unistuttgart.kara.kara.Tree;
 import javafx.beans.property.ReadOnlyListProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.beans.value.ChangeListener;
 
 import java.util.Optional;
 
 public class KaraGameViewPresenter extends GameViewPresenterBase {
 	private final World world;
+	private ChangeListener<Direction> karaDirectionChangeListener;
 
 	public KaraGameViewPresenter(KaraGame game) {
 		super(game);
@@ -87,14 +90,27 @@ public class KaraGameViewPresenter extends GameViewPresenterBase {
 		var layer = new ViewModelCellLayer();
 		layer.setImageName("Kara");
 
-		kara.directionProperty().addListener((v, c, l) -> {
-			runLocked(() -> {
-				refreshKaraLayer(layer, kara);
-			});
-		});
+		addKaraDirectionListener(layer, kara);
 
 		refreshKaraLayer(layer, kara);
 		cell.getLayers().add(layer);
+	}
+
+	/*
+	 * Adds a listener for the change of the direction, to also update the layers if Kara turns left.
+	 * Note: Since onSetTileNodeAtForCell() is called every time the contents of a tile changes, Kara might
+	 * be configured multiple times. Avoid, that multiple direction listeners are attached.
+	 */
+	private void addKaraDirectionListener(final ViewModelCellLayer layer, final ReadOnlyKara kara) {
+		if (karaDirectionChangeListener != null) {
+			kara.directionProperty().removeListener(karaDirectionChangeListener);
+		}
+		karaDirectionChangeListener = (property, oldValue, newValue) -> {
+			runLocked(() -> {
+				refreshKaraLayer(layer, kara);
+			});
+		};
+		kara.directionProperty().addListener(karaDirectionChangeListener);
 	}
 
 	private void refreshKaraLayer(ViewModelCellLayer layer, ReadOnlyKara kara) {
