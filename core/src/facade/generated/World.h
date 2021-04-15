@@ -8,8 +8,8 @@
 #include <memory>
 #include <string>
 #include "ObservableProperties.h"
-#include "Location.h"
 #include "Size.h"
+#include "Location.h"
 
 namespace kara {
 class KaraGame;
@@ -49,13 +49,13 @@ public:
 	 */
 	World(std::shared_ptr<kara::KaraGame> game);
 	/**
-	 * For a given location, tests whether the location is inside the bound of the world.
-	 */
-	bool isLocationInWorld(mpw::Location location) const noexcept;
-	/**
 	 * Return the size of the current world. From the size you can retrieve the number of rows and colums.
 	 */
 	mpw::Size getWorldSize() const noexcept;
+	/**
+	 * For a given location, tests whether the location is inside the bound of the world.
+	 */
+	bool isLocationInWorld(mpw::Location location) const noexcept;
 
 	/**
 	 * Virtual desctructor to support inheritance.

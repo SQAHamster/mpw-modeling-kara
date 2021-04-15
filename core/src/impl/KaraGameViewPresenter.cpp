@@ -20,8 +20,6 @@ using namespace framework;
 
 namespace viewmodel {
 
-// TODO remove listeners on removement of relating objects
-
 KaraGameViewPresenter::KaraGameViewPresenter(std::shared_ptr<kara::KaraGame> game)
         : inherited(game), game(std::move(game)) {
 }
@@ -92,14 +90,26 @@ void KaraGameViewPresenter::configureKaraImageView(ViewModelCell& cell, const Re
     auto layer = std::make_shared<ViewModelCellLayer>();
     layer->setImageName("Kara");
 
-    changedKaraDirectionListenerIds[&kara] = kara.directionProperty().addListener(
-            [this, &kara, layer](Direction oldValue, Direction newValue) {
-                auto lock = getSemaphore().lock();
-                refreshKaraLayer(*layer, kara);
-            });
+    addKaraDirectionListener(layer, kara);
     refreshKaraLayer(*layer, kara);
 
     cell.addToLayers(layer);
+}
+
+/*
+ * Adds a listener for the change of the direction, to also update the layers if Kara turns left.
+ * Note: Since onSetTileNodeAtForCell() is called every time the contents of a tile changes, Kara might
+ * be configured multiple times. Avoid, that multiple direction listeners are attached.
+ */
+void KaraGameViewPresenter::addKaraDirectionListener(std::shared_ptr<ViewModelCellLayer> karaLayer, const ReadOnlyKara& kara) {
+    if (karaDirectionChangeListenerId.has_value()) {
+        kara.directionProperty().removeListener(karaDirectionChangeListenerId.value());
+    }
+    karaDirectionChangeListenerId = kara.directionProperty().addListener(
+            [this, &kara, karaLayer](Direction oldValue, Direction newValue) {
+                auto lock = getSemaphore().lock();
+                refreshKaraLayer(*karaLayer, kara);
+            });
 }
 
 void KaraGameViewPresenter::refreshKaraLayer(ViewModelCellLayer& layer, const kara::ReadOnlyKara& kara) {

@@ -118,28 +118,28 @@ mpw::Direction Kara::getDirection() const noexcept {
 	return internalKara->getDirection();
 }
 
-mpw::Location Kara::getLocation() const noexcept {
-	return internalKara->getLocation();
-}
-
 bool Kara::onLeaf() const noexcept {
 	return internalKara->onLeaf();
-}
-
-bool Kara::treeRight() const noexcept {
-	return internalKara->treeRight();
 }
 
 bool Kara::treeLeft() const noexcept {
 	return internalKara->treeLeft();
 }
 
-bool Kara::treeFront() const noexcept {
-	return internalKara->treeFront();
-}
-
 bool Kara::mushroomFront() const noexcept {
 	return internalKara->mushroomFront();
+}
+
+mpw::Location Kara::getLocation() const noexcept {
+	return internalKara->getLocation();
+}
+
+bool Kara::treeRight() const noexcept {
+	return internalKara->treeRight();
+}
+
+bool Kara::treeFront() const noexcept {
+	return internalKara->treeFront();
 }
 
 int Kara::readNumber(std::string message) {

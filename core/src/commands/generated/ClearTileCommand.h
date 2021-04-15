@@ -10,8 +10,8 @@
 
 #include "Location.h"
 #include "TileContent.h"
-#include "Tile.h"
 #include "ConcreteWorld.h"
+#include "Tile.h"
 #include "Size.h"
 
 namespace commands {
@@ -20,8 +20,8 @@ namespace commands {
  * Clears all contents of the tile identified by the given location.<br/>
  * <br/>
  * <b>requires / ensures:</b> the world tiles must not be empty<br/>
- * <b>ensures:</b> the tile's contents have to be empty<br/>
- * <b>requires:</b> location has to be on the world
+ * <b>requires:</b> location has to be on the world<br/>
+ * <b>ensures:</b> the tile's contents have to be empty
  * 
  */
 

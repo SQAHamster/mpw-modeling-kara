@@ -122,13 +122,13 @@ bool InitKaraCommand::addToWorld(mpw::Location location) {
 
 	mpw::Location o1 = o0->getLocation();
 
-	// assert condition: o1.column == location.column
-	if (o1.getColumn() != location.getColumn()) {
+	// assert condition: o1.row == location.row
+	if (o1.getRow() != location.getRow()) {
 		return false;
 	}
 
-	// assert condition: o1.row == location.row
-	if (o1.getRow() != location.getRow()) {
+	// assert condition: o1.column == location.column
+	if (o1.getColumn() != location.getColumn()) {
 		return false;
 	}
 
@@ -153,13 +153,13 @@ std::shared_ptr<mpw::Tile> InitKaraCommand::addToWorld_findO0(
 		// reference check: o0: location
 		mpw::Location o1 = o0->getLocation();
 
-		// attribute check: o1: column
-		if (o1.getColumn() != location.getColumn()) {
+		// attribute check: o1: row
+		if (o1.getRow() != location.getRow()) {
 			continue;
 		}
 
-		// attribute check: o1: row
-		if (o1.getRow() != location.getRow()) {
+		// attribute check: o1: column
+		if (o1.getColumn() != location.getColumn()) {
 			continue;
 		}
 

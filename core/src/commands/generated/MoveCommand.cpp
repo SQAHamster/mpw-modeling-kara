@@ -266,17 +266,17 @@ bool MoveCommand::moveMushroomNorth() {
 		return false;
 	}
 
-	// find new variable from many-reference: front:Tile -> contents -> o0:Mushroom
-
-	std::shared_ptr < kara::Mushroom > o0 = moveMushroomNorth_findO0(*front);
-	if (o0 == nullptr) {
-		return false;
-	}
-
 	// new variable from reference: front:Tile -> north -> behind:Tile
 
 	std::shared_ptr < mpw::Tile > behind = front->getNorth();
 	if (behind.get() == nullptr) {
+		return false;
+	}
+
+	// find new variable from many-reference: front:Tile -> contents -> o0:Mushroom
+
+	std::shared_ptr < kara::Mushroom > o0 = moveMushroomNorth_findO0(*front);
+	if (o0 == nullptr) {
 		return false;
 	}
 
@@ -570,23 +570,6 @@ bool MoveCommand::helper_Precondition2_currentTile_result0_north_result1_north_r
 	return result3;
 }
 
-bool MoveCommand::helper_Precondition2_currentTile_result0_east_result1_east_result2_contents_is_empty() const noexcept {
-	std::shared_ptr<const mpw::Tile> result0 = self->getCurrentTile();
-	if (result0 == nullptr) {
-		return false;
-	}
-	std::shared_ptr<const mpw::Tile> result1 = result0->getEast();
-	if (result1 == nullptr) {
-		return false;
-	}
-	std::shared_ptr<const mpw::Tile> result2 = result1->getEast();
-	if (result2 == nullptr) {
-		return false;
-	}
-	bool result3 = result2->getContents().empty();
-	return result3;
-}
-
 bool MoveCommand::helper_Precondition2_currentTile_result0_south_result1_south_result2_contents_is_empty() const noexcept {
 	std::shared_ptr<const mpw::Tile> result0 = self->getCurrentTile();
 	if (result0 == nullptr) {
@@ -597,6 +580,23 @@ bool MoveCommand::helper_Precondition2_currentTile_result0_south_result1_south_r
 		return false;
 	}
 	std::shared_ptr<const mpw::Tile> result2 = result1->getSouth();
+	if (result2 == nullptr) {
+		return false;
+	}
+	bool result3 = result2->getContents().empty();
+	return result3;
+}
+
+bool MoveCommand::helper_Precondition2_currentTile_result0_east_result1_east_result2_contents_is_empty() const noexcept {
+	std::shared_ptr<const mpw::Tile> result0 = self->getCurrentTile();
+	if (result0 == nullptr) {
+		return false;
+	}
+	std::shared_ptr<const mpw::Tile> result1 = result0->getEast();
+	if (result1 == nullptr) {
+		return false;
+	}
+	std::shared_ptr<const mpw::Tile> result2 = result1->getEast();
 	if (result2 == nullptr) {
 		return false;
 	}

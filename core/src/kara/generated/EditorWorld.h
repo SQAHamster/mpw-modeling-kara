@@ -8,8 +8,8 @@
 #include <memory>
 #include <string>
 #include "ReadOnlyWorld.h"
-#include "Location.h"
 #include "Size.h"
+#include "Location.h"
 #include "Direction.h"
 
 #include "AddLeafToTileCommandParameters.h"
@@ -19,14 +19,14 @@
 #include "InitKaraCommandParameters.h"
 #include "InitWorldCommandParameters.h"
 
-namespace mpw {
-class TileContent;
+namespace kara {
+class ConcreteWorld;
 }
 namespace mpw {
 class Tile;
 }
-namespace kara {
-class ConcreteWorld;
+namespace mpw {
+class TileContent;
 }
 namespace kara {
 class ConcreteKara;
@@ -84,6 +84,7 @@ public:
 			commands::InitWorldCommandParameters &parameters) = 0;
 
 	virtual std::shared_ptr<kara::EditorKara> getEditorKara() noexcept = 0;
+	virtual std::shared_ptr<const kara::EditorKara> getEditorKara() const noexcept = 0;
 
 };
 

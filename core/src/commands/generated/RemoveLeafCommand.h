@@ -8,12 +8,12 @@
 #include "CompositeCommandBase.h"
 #include "RemoveLeafCommandParameters.h"
 
-#include "Leaf.h"
-#include "Stage.h"
-#include "LogEntry.h"
+#include "GameLog.h"
 #include "ConcreteKara.h"
 #include "Tile.h"
-#include "GameLog.h"
+#include "Stage.h"
+#include "Leaf.h"
+#include "LogEntry.h"
 #include "TileContent.h"
 
 namespace commands {

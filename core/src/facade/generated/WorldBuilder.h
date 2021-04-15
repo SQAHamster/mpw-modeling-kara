@@ -60,8 +60,8 @@ public:
 	 * <br/>
 	 * <b>requires / ensures:</b> the world tiles must not be empty<br/>
 	 * <b>ensures:</b> a tree has to be placed on the tile's location<br/>
-	 * <b>requires:</b> the tile at the given location has to be empty<br/>
-	 * <b>requires:</b> location has to be on the world
+	 * <b>requires:</b> location has to be on the world<br/>
+	 * <b>requires:</b> the tile at the given location has to be empty
 	 * 
 	 */
 	WorldBuilder& addTreeToTile(mpw::Location location);
@@ -69,8 +69,8 @@ public:
 	 * Clears all contents of the tile identified by the given location.<br/>
 	 * <br/>
 	 * <b>requires / ensures:</b> the world tiles must not be empty<br/>
-	 * <b>ensures:</b> the tile's contents have to be empty<br/>
-	 * <b>requires:</b> location has to be on the world
+	 * <b>requires:</b> location has to be on the world<br/>
+	 * <b>ensures:</b> the tile's contents have to be empty
 	 * 
 	 */
 	WorldBuilder& clearTile(mpw::Location location);
@@ -79,8 +79,8 @@ public:
 	 * <br/>
 	 * <b>requires / ensures:</b> the world tiles must not be empty<br/>
 	 * <b>requires:</b> kara must not be already initialized<br/>
-	 * <b>ensures:</b> Kara has to be placed on the tile's location<br/>
-	 * <b>requires:</b> location has to be on the world
+	 * <b>requires:</b> location has to be on the world<br/>
+	 * <b>ensures:</b> Kara has to be placed on the tile's location
 	 * 
 	 */
 	WorldBuilder& initKara(mpw::Location location, mpw::Direction direction);
@@ -88,8 +88,8 @@ public:
 	 * Defines a new world by creating a new, empty world of the given size.<br/>
 	 * <br/>
 	 * <b>requires / ensures:</b> the world tiles must not be empty<br/>
-	 * <b>ensures:</b> size of world is set<br/>
-	 * <b>requires:</b> size must be > 0
+	 * <b>requires:</b> size must be > 0<br/>
+	 * <b>ensures:</b> size of world is set
 	 * 
 	 */
 	WorldBuilder& initWorld(int columns, int rows);
@@ -118,8 +118,8 @@ public:
 	 * <br/>
 	 * <b>requires / ensures:</b> the world tiles must not be empty<br/>
 	 * <b>ensures:</b> a tree has to be placed on the tile's location<br/>
-	 * <b>requires:</b> the tile at the given location has to be empty<br/>
-	 * <b>requires:</b> location has to be on the world
+	 * <b>requires:</b> location has to be on the world<br/>
+	 * <b>requires:</b> the tile at the given location has to be empty
 	 * 
 	 */
 	WorldBuilder& addTreeToTile(int locationX, int locationY);
@@ -127,8 +127,8 @@ public:
 	 * Clears all contents of the tile identified by the given location.<br/>
 	 * <br/>
 	 * <b>requires / ensures:</b> the world tiles must not be empty<br/>
-	 * <b>ensures:</b> the tile's contents have to be empty<br/>
-	 * <b>requires:</b> location has to be on the world
+	 * <b>requires:</b> location has to be on the world<br/>
+	 * <b>ensures:</b> the tile's contents have to be empty
 	 * 
 	 */
 	WorldBuilder& clearTile(int locationX, int locationY);
@@ -137,8 +137,8 @@ public:
 	 * <br/>
 	 * <b>requires / ensures:</b> the world tiles must not be empty<br/>
 	 * <b>requires:</b> kara must not be already initialized<br/>
-	 * <b>ensures:</b> Kara has to be placed on the tile's location<br/>
-	 * <b>requires:</b> location has to be on the world
+	 * <b>requires:</b> location has to be on the world<br/>
+	 * <b>ensures:</b> Kara has to be placed on the tile's location
 	 * 
 	 */
 	WorldBuilder& initKara(int locationX, int locationY,

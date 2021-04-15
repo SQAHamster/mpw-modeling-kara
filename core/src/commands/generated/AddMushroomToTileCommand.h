@@ -10,8 +10,8 @@
 
 #include "Location.h"
 #include "Mushroom.h"
-#include "Tile.h"
 #include "ConcreteWorld.h"
+#include "Tile.h"
 #include "Size.h"
 #include "TileContent.h"
 

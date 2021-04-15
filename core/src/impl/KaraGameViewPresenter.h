@@ -20,7 +20,7 @@ private:
 
     const std::shared_ptr<kara::KaraGame> game;
 
-    std::unordered_map<const kara::ReadOnlyKara*, unsigned int> changedKaraDirectionListenerIds;
+    std::optional<unsigned int> karaDirectionChangeListenerId;
 
 public:
 
@@ -46,6 +46,7 @@ private:
     void refreshMushroomLayer(ViewModelCellLayer& layer, const mpw::Tile& tile);
 
     void configureKaraImageView(ViewModelCell& cell, const kara::ReadOnlyKara& kara);
+    void addKaraDirectionListener(std::shared_ptr<ViewModelCellLayer> karaLayer, const kara::ReadOnlyKara& kara);
     void refreshKaraLayer(ViewModelCellLayer& layer, const kara::ReadOnlyKara& kara);
 
     static std::optional<std::shared_ptr<const kara::ReadOnlyKara>> findKaraOnTile(const mpw::Tile& tile);

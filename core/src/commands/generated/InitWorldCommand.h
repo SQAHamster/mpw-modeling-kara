@@ -8,12 +8,12 @@
 #include "CompositeCommandBase.h"
 #include "InitWorldCommandParameters.h"
 
+#include "TileContent.h"
 #include "ConcreteWorld.h"
 #include "Location.h"
-#include "ConcreteKara.h"
 #include "Tile.h"
+#include "ConcreteKara.h"
 #include "Size.h"
-#include "TileContent.h"
 
 namespace commands {
 
@@ -21,8 +21,8 @@ namespace commands {
  * Defines a new world by creating a new, empty world of the given size.<br/>
  * <br/>
  * <b>requires / ensures:</b> the world tiles must not be empty<br/>
- * <b>ensures:</b> size of world is set<br/>
- * <b>requires:</b> size must be > 0
+ * <b>requires:</b> size must be > 0<br/>
+ * <b>ensures:</b> size of world is set
  * 
  */
 

@@ -73,11 +73,6 @@ public:
 			mpw::Location location) const noexcept = 0;
 
 	/**
-	 * For a given location, tests whether the location is inside the bound of the world.
-	 */
-	virtual bool isLocationInWorld(mpw::Location location) const noexcept = 0;
-
-	/**
 	 * For a given location, check whether only Kara is placed on the tile.
 	 */
 	virtual bool isOnlyKaraAtLocation(mpw::Location location) const noexcept = 0;
@@ -87,7 +82,13 @@ public:
 	 */
 	virtual mpw::Size getWorldSize() const noexcept = 0;
 
+	/**
+	 * For a given location, tests whether the location is inside the bound of the world.
+	 */
+	virtual bool isLocationInWorld(mpw::Location location) const noexcept = 0;
+
 	virtual std::shared_ptr<kara::ReadOnlyKara> getReadOnlyKara() noexcept = 0;
+	virtual std::shared_ptr<const kara::ReadOnlyKara> getReadOnlyKara() const noexcept = 0;
 
 };
 

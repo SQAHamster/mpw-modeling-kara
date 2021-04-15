@@ -10,12 +10,12 @@
 
 #include "Location.h"
 #include "Direction.h"
-#include "ConcreteKara.h"
 #include "Tile.h"
 #include "ConcreteWorld.h"
-#include "TileContent.h"
+#include "ConcreteKara.h"
 #include "Stage.h"
 #include "Size.h"
+#include "TileContent.h"
 
 namespace commands {
 
@@ -24,8 +24,8 @@ namespace commands {
  * <br/>
  * <b>requires / ensures:</b> the world tiles must not be empty<br/>
  * <b>requires:</b> kara must not be already initialized<br/>
- * <b>ensures:</b> Kara has to be placed on the tile's location<br/>
- * <b>requires:</b> location has to be on the world
+ * <b>requires:</b> location has to be on the world<br/>
+ * <b>ensures:</b> Kara has to be placed on the tile's location
  * 
  */
 

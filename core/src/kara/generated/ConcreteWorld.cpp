@@ -41,17 +41,6 @@ std::shared_ptr<const mpw::Tile> ConcreteWorld::getTileAt(
 	}
 }
 
-bool ConcreteWorld::isLocationInWorld(mpw::Location location) const noexcept {
-	try {
-		return location.getColumn() >= 0
-				&& location.getColumn() < this->getStageSize().getColumnCount()
-				&& location.getRow() >= 0
-				&& location.getRow() < this->getStageSize().getRowCount();
-	} catch (...) {
-		return false;
-	}
-}
-
 bool ConcreteWorld::isOnlyKaraAtLocation(mpw::Location location) const noexcept {
 	try {
 		return (helper_IsOnlyKaraAtLocation_kara_currentTile_result0_location(
@@ -90,6 +79,17 @@ mpw::Size ConcreteWorld::getWorldSize() const noexcept {
 		return this->getStageSize();
 	} catch (...) {
 		return {};
+	}
+}
+
+bool ConcreteWorld::isLocationInWorld(mpw::Location location) const noexcept {
+	try {
+		return location.getColumn() >= 0
+				&& location.getColumn() < this->getStageSize().getColumnCount()
+				&& location.getRow() >= 0
+				&& location.getRow() < this->getStageSize().getRowCount();
+	} catch (...) {
+		return false;
 	}
 }
 
@@ -148,12 +148,21 @@ std::shared_ptr<const kara::ConcreteKara> ConcreteWorld::getKara() const noexcep
 std::shared_ptr<kara::ReadOnlyKara> ConcreteWorld::getReadOnlyKara() noexcept {
 	return this->kara;
 }
+std::shared_ptr<const kara::ReadOnlyKara> ConcreteWorld::getReadOnlyKara() const noexcept {
+	return this->kara;
+}
 
 std::shared_ptr<kara::GameKara> ConcreteWorld::getGameKara() noexcept {
 	return this->kara;
 }
+std::shared_ptr<const kara::GameKara> ConcreteWorld::getGameKara() const noexcept {
+	return this->kara;
+}
 
 std::shared_ptr<kara::EditorKara> ConcreteWorld::getEditorKara() noexcept {
+	return this->kara;
+}
+std::shared_ptr<const kara::EditorKara> ConcreteWorld::getEditorKara() const noexcept {
 	return this->kara;
 }
 

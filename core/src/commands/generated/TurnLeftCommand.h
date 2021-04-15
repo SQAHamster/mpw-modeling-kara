@@ -9,11 +9,11 @@
 #include "TurnLeftCommandParameters.h"
 
 #include "GameLog.h"
-#include "ConcreteKara.h"
 #include "LogEntry.h"
+#include "ConcreteKara.h"
 #include "Direction.h"
-#include "Tile.h"
 #include "Stage.h"
+#include "Tile.h"
 
 namespace commands {
 

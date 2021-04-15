@@ -8,15 +8,15 @@
 #include "CompositeCommandBase.h"
 #include "MoveCommandParameters.h"
 
-#include "Tile.h"
 #include "ConcreteKara.h"
+#include "Tile.h"
 #include "Mushroom.h"
-#include "GameLog.h"
 #include "LogEntry.h"
-#include "Tree.h"
-#include "TileContent.h"
-#include "Stage.h"
+#include "GameLog.h"
 #include "Direction.h"
+#include "TileContent.h"
+#include "Tree.h"
+#include "Stage.h"
 
 namespace commands {
 
@@ -85,9 +85,9 @@ private:
 
 	bool helper_Precondition2_currentTile_result0_north_result1_north_result2_contents_is_empty() const noexcept;
 
-	bool helper_Precondition2_currentTile_result0_east_result1_east_result2_contents_is_empty() const noexcept;
-
 	bool helper_Precondition2_currentTile_result0_south_result1_south_result2_contents_is_empty() const noexcept;
+
+	bool helper_Precondition2_currentTile_result0_east_result1_east_result2_contents_is_empty() const noexcept;
 };
 
 }

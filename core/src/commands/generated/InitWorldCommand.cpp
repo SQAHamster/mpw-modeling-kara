@@ -86,13 +86,13 @@ bool InitWorldCommand::createFirstRowTile(std::shared_ptr<mpw::Tile> &next) {
 	// new instance: newLocation:Location
 	mpw::Location newLocation;
 
-	// new variable from reference: next:Tile -> location -> o0:Location
-
-	mpw::Location o0 = next->getLocation();
-
 	if (!self->getTiles().contains(next)) {
 		return false;
 	}
+
+	// new variable from reference: next:Tile -> location -> o0:Location
+
+	mpw::Location o0 = next->getLocation();
 
 	x = o0.getColumn();
 
@@ -156,13 +156,13 @@ bool InitWorldCommand::createFirstTileForNextRow(
 	// new instance: newLocation:Location
 	mpw::Location newLocation;
 
-	// new variable from reference: firstInRow:Tile -> location -> o0:Location
-
-	mpw::Location o0 = firstInRow->getLocation();
-
 	if (!self->getTiles().contains(firstInRow)) {
 		return false;
 	}
+
+	// new variable from reference: firstInRow:Tile -> location -> o0:Location
+
+	mpw::Location o0 = firstInRow->getLocation();
 
 	y = o0.getRow();
 
@@ -212,16 +212,16 @@ bool InitWorldCommand::createFurtherRowTile(std::shared_ptr<mpw::Tile> &next) {
 		return false;
 	}
 
+	// new variable from reference: next:Tile -> location -> o0:Location
+
+	mpw::Location o0 = next->getLocation();
+
 	// new variable from reference: next:Tile -> north -> north:Tile
 
 	std::shared_ptr < mpw::Tile > north = next->getNorth();
 	if (north.get() == nullptr) {
 		return false;
 	}
-
-	// new variable from reference: next:Tile -> location -> o0:Location
-
-	mpw::Location o0 = next->getLocation();
 
 	// new variable from reference: north:Tile -> east -> northEast:Tile
 
@@ -317,11 +317,11 @@ bool InitWorldCommand::setSize(int columns, int rows) {
 	// new instance: o0:Size
 	mpw::Size o0;
 
-	// set attribute condition o0.rowCount := rows
-	o0.setRowCount(rows);
-
 	// set attribute condition o0.columnCount := columns
 	o0.setColumnCount(columns);
+
+	// set attribute condition o0.rowCount := rows
+	o0.setRowCount(rows);
 
 	// create reference: CREATE self:EditorWorld -> stageSize -> o0:Size
 	executeSetValueProperty(self, kara::ConcreteWorld::cFeatureKeyStageSize,
@@ -333,17 +333,17 @@ bool InitWorldCommand::setSize(int columns, int rows) {
 
 bool InitWorldCommand::clearTiles() {
 
-	// clear references: self:EditorWorld -> tiles -> o1:Tile
-	while (self->getTiles().size() > 0) {
-		executeRemoveReference(self, kara::ConcreteWorld::cFeatureKeyTiles,
-				self->getTiles().front());
-	}
-
 	// clear references: self:EditorWorld -> tileContents -> o0:TileContent
 	while (self->getTileContents().size() > 0) {
 		executeRemoveReference(self,
 				kara::ConcreteWorld::cFeatureKeyTileContents,
 				self->getTileContents().front());
+	}
+
+	// clear references: self:EditorWorld -> tiles -> o1:Tile
+	while (self->getTiles().size() > 0) {
+		executeRemoveReference(self, kara::ConcreteWorld::cFeatureKeyTiles,
+				self->getTiles().front());
 	}
 
 	return true;

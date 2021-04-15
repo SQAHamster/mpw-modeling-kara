@@ -20,12 +20,12 @@ World::World(std::shared_ptr<kara::KaraGame> game) {
 	this->kara = std::make_shared < Kara > (game, internalWorld->getKara());
 }
 
-bool World::isLocationInWorld(mpw::Location location) const noexcept {
-	return internalWorld->isLocationInWorld(location);
-}
-
 mpw::Size World::getWorldSize() const noexcept {
 	return internalWorld->getWorldSize();
+}
+
+bool World::isLocationInWorld(mpw::Location location) const noexcept {
+	return internalWorld->isLocationInWorld(location);
 }
 
 std::shared_ptr<kara::GameWorld> World::getInternalWorld() noexcept {

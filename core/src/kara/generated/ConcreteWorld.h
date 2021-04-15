@@ -82,8 +82,6 @@ public:
 	std::shared_ptr<const mpw::Tile> getTileAt(
 			mpw::Location location) const noexcept override;
 
-	bool isLocationInWorld(mpw::Location location) const noexcept override;
-
 	bool isOnlyKaraAtLocation(mpw::Location location) const noexcept override;
 
 private:
@@ -97,6 +95,8 @@ private:
 public:
 
 	mpw::Size getWorldSize() const noexcept override;
+
+	bool isLocationInWorld(mpw::Location location) const noexcept override;
 
 	void addLeafToTile(commands::AddLeafToTileCommandParameters &parameters)
 			override;
@@ -172,10 +172,13 @@ public:
 	virtual ~ConcreteWorld() = default;
 
 	std::shared_ptr<kara::ReadOnlyKara> getReadOnlyKara() noexcept override;
-
+	std::shared_ptr<const kara::ReadOnlyKara> getReadOnlyKara() const noexcept
+			override;
 	std::shared_ptr<kara::GameKara> getGameKara() noexcept override;
-
+	std::shared_ptr<const kara::GameKara> getGameKara() const noexcept override;
 	std::shared_ptr<kara::EditorKara> getEditorKara() noexcept override;
+	std::shared_ptr<const kara::EditorKara> getEditorKara() const noexcept
+			override;
 
 	static constexpr unsigned cFeatureKeyKara = 4;
 	using Stage::cFeatureKeyTiles;

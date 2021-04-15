@@ -33,6 +33,7 @@ public:
 	}
 
 	virtual std::shared_ptr<kara::GameKara> getGameKara() noexcept = 0;
+	virtual std::shared_ptr<const kara::GameKara> getGameKara() const noexcept = 0;
 
 };
 

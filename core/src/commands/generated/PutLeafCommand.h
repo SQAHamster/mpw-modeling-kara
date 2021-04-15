@@ -8,12 +8,12 @@
 #include "CompositeCommandBase.h"
 #include "PutLeafCommandParameters.h"
 
-#include "GameLog.h"
-#include "ConcreteKara.h"
-#include "Tile.h"
-#include "Stage.h"
-#include "LogEntry.h"
 #include "Leaf.h"
+#include "LogEntry.h"
+#include "GameLog.h"
+#include "Stage.h"
+#include "Tile.h"
+#include "ConcreteKara.h"
 #include "TileContent.h"
 
 namespace commands {
