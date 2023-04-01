@@ -20,11 +20,11 @@ class ConcreteWorld;
 namespace kara {
 class Kara;
 }
-namespace kara {
-class ConcreteKara;
-}
 namespace mpw {
 class MiniProgrammingWorld;
+}
+namespace kara {
+class ConcreteKara;
 }
 namespace kara {
 class GameWorld;

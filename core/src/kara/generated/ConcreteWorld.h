@@ -79,6 +79,10 @@ public:
 				inherited::shared_from_this());
 	}
 
+	mpw::Size getWorldSize() const noexcept override;
+
+	bool isLocationInWorld(mpw::Location location) const noexcept override;
+
 	std::shared_ptr<const mpw::Tile> getTileAt(
 			mpw::Location location) const noexcept override;
 
@@ -86,17 +90,13 @@ public:
 
 private:
 
-	int helper_IsOnlyKaraAtLocation_kara_currentTile_result0_contents_size(
-			mpw::Location location) const noexcept;
-
 	mpw::Location helper_IsOnlyKaraAtLocation_kara_currentTile_result0_location(
 			mpw::Location location) const noexcept;
 
+	int helper_IsOnlyKaraAtLocation_kara_currentTile_result0_contents_size(
+			mpw::Location location) const noexcept;
+
 public:
-
-	mpw::Size getWorldSize() const noexcept override;
-
-	bool isLocationInWorld(mpw::Location location) const noexcept override;
 
 	void addLeafToTile(commands::AddLeafToTileCommandParameters &parameters)
 			override;

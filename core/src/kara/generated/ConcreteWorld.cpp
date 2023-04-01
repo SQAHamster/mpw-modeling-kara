@@ -30,6 +30,25 @@ ConcreteWorld::ConcreteWorld() {
 	this->kara = std::make_shared<kara::ConcreteKara>();
 }
 
+mpw::Size ConcreteWorld::getWorldSize() const noexcept {
+	try {
+		return this->getStageSize();
+	} catch (...) {
+		return {};
+	}
+}
+
+bool ConcreteWorld::isLocationInWorld(mpw::Location location) const noexcept {
+	try {
+		return location.getColumn() >= 0
+				&& location.getColumn() < this->getStageSize().getColumnCount()
+				&& location.getRow() >= 0
+				&& location.getRow() < this->getStageSize().getRowCount();
+	} catch (...) {
+		return false;
+	}
+}
+
 std::shared_ptr<const mpw::Tile> ConcreteWorld::getTileAt(
 		mpw::Location location) const noexcept {
 	try {
@@ -52,17 +71,6 @@ bool ConcreteWorld::isOnlyKaraAtLocation(mpw::Location location) const noexcept 
 	}
 }
 
-int ConcreteWorld::helper_IsOnlyKaraAtLocation_kara_currentTile_result0_contents_size(
-		mpw::Location location) const noexcept {
-	std::shared_ptr<const mpw::Tile> result0 =
-			this->getKara()->getCurrentTile();
-	if (result0 == nullptr) {
-		return 0;
-	}
-	int result1 = result0->getContents().size();
-	return result1;
-}
-
 mpw::Location ConcreteWorld::helper_IsOnlyKaraAtLocation_kara_currentTile_result0_location(
 		mpw::Location location) const noexcept {
 	std::shared_ptr<const mpw::Tile> result0 =
@@ -74,23 +82,15 @@ mpw::Location ConcreteWorld::helper_IsOnlyKaraAtLocation_kara_currentTile_result
 	return result1;
 }
 
-mpw::Size ConcreteWorld::getWorldSize() const noexcept {
-	try {
-		return this->getStageSize();
-	} catch (...) {
-		return {};
+int ConcreteWorld::helper_IsOnlyKaraAtLocation_kara_currentTile_result0_contents_size(
+		mpw::Location location) const noexcept {
+	std::shared_ptr<const mpw::Tile> result0 =
+			this->getKara()->getCurrentTile();
+	if (result0 == nullptr) {
+		return 0;
 	}
-}
-
-bool ConcreteWorld::isLocationInWorld(mpw::Location location) const noexcept {
-	try {
-		return location.getColumn() >= 0
-				&& location.getColumn() < this->getStageSize().getColumnCount()
-				&& location.getRow() >= 0
-				&& location.getRow() < this->getStageSize().getRowCount();
-	} catch (...) {
-		return false;
-	}
+	int result1 = result0->getContents().size();
+	return result1;
 }
 
 void ConcreteWorld::addLeafToTile(

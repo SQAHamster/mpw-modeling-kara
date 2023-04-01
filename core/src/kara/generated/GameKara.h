@@ -17,20 +17,20 @@
 #include "TurnRightCommandParameters.h"
 #include "WriteCommandParameters.h"
 
-namespace kara {
-class ConcreteKara;
-}
-namespace kara {
-class Tree;
-}
-namespace mpw {
-class TileContent;
-}
 namespace mpw {
 class Tile;
 }
 namespace kara {
+class ConcreteKara;
+}
+namespace kara {
 class Mushroom;
+}
+namespace mpw {
+class TileContent;
+}
+namespace kara {
+class Tree;
 }
 namespace mpw {
 class Stage;

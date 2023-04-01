@@ -12,8 +12,8 @@
 #include "ConcreteWorld.h"
 #include "Tree.h"
 #include "Tile.h"
-#include "Size.h"
 #include "TileContent.h"
+#include "Size.h"
 
 namespace commands {
 
@@ -22,8 +22,8 @@ namespace commands {
  * <br/>
  * <b>requires / ensures:</b> the world tiles must not be empty<br/>
  * <b>ensures:</b> a tree has to be placed on the tile's location<br/>
- * <b>requires:</b> location has to be on the world<br/>
- * <b>requires:</b> the tile at the given location has to be empty
+ * <b>requires:</b> the tile at the given location has to be empty<br/>
+ * <b>requires:</b> location has to be on the world
  * 
  */
 

@@ -8,12 +8,12 @@
 #include "CompositeCommandBase.h"
 #include "PutLeafCommandParameters.h"
 
-#include "Leaf.h"
-#include "LogEntry.h"
-#include "GameLog.h"
-#include "Stage.h"
 #include "Tile.h"
 #include "ConcreteKara.h"
+#include "LogEntry.h"
+#include "GameLog.h"
+#include "Leaf.h"
+#include "Stage.h"
 #include "TileContent.h"
 
 namespace commands {
@@ -22,8 +22,8 @@ namespace commands {
  * Drop a leaf to the tile on which the kara is currently.<br/>
  * <br/>
  * <b>requires / ensures:</b> Kara is placed on a tile.<br/>
- * <b>requires:</b> the kara must not be on any leaf<br/>
- * <b>ensures:</b> there has to be a leaf available on the kara's tile
+ * <b>ensures:</b> there has to be a leaf available on the kara's tile<br/>
+ * <b>requires:</b> the kara must not be on any leaf
  * 
  */
 

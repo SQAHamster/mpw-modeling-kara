@@ -67,17 +67,17 @@ bool PutLeafCommand::internalMainUnit() {
 	// new instance: leaf:Leaf
 	std::shared_ptr < kara::Leaf > leaf = std::make_shared<kara::Leaf>();
 
-	// new variable from reference: self:GameKara -> currentTile -> position:Tile
-
-	std::shared_ptr < mpw::Tile > position = self->getCurrentTile();
-	if (position.get() == nullptr) {
-		return false;
-	}
-
 	// new variable from reference: self:GameKara -> stage -> stage:Stage
 
 	std::shared_ptr < mpw::Stage > stage = self->getStage();
 	if (stage.get() == nullptr) {
+		return false;
+	}
+
+	// new variable from reference: self:GameKara -> currentTile -> position:Tile
+
+	std::shared_ptr < mpw::Tile > position = self->getCurrentTile();
+	if (position.get() == nullptr) {
 		return false;
 	}
 

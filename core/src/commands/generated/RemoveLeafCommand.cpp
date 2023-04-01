@@ -64,17 +64,17 @@ void RemoveLeafCommand::execute() {
 }
 bool RemoveLeafCommand::internalMainUnit() {
 
-	// new variable from reference: self:GameKara -> currentTile -> position:Tile
-
-	std::shared_ptr < mpw::Tile > position = self->getCurrentTile();
-	if (position.get() == nullptr) {
-		return false;
-	}
-
 	// new variable from reference: self:GameKara -> stage -> stage:Stage
 
 	std::shared_ptr < mpw::Stage > stage = self->getStage();
 	if (stage.get() == nullptr) {
+		return false;
+	}
+
+	// new variable from reference: self:GameKara -> currentTile -> position:Tile
+
+	std::shared_ptr < mpw::Tile > position = self->getCurrentTile();
+	if (position.get() == nullptr) {
 		return false;
 	}
 

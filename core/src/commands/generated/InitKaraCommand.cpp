@@ -103,6 +103,13 @@ bool InitKaraCommand::setProperties(mpw::Direction initialDirection) {
 
 bool InitKaraCommand::addToWorld(mpw::Location location) {
 
+	// find new variable from many-reference: self:EditorWorld -> tiles -> o0:Tile
+
+	std::shared_ptr < mpw::Tile > o0 = addToWorld_findO0(*self);
+	if (o0 == nullptr) {
+		return false;
+	}
+
 	// new variable from reference: self:EditorWorld -> kara -> kara:EditorKara
 
 	std::shared_ptr < kara::EditorKara > kara = std::dynamic_pointer_cast
@@ -111,24 +118,17 @@ bool InitKaraCommand::addToWorld(mpw::Location location) {
 		return false;
 	}
 
-	// find new variable from many-reference: self:EditorWorld -> tiles -> o0:Tile
-
-	std::shared_ptr < mpw::Tile > o0 = addToWorld_findO0(*self);
-	if (o0 == nullptr) {
-		return false;
-	}
-
 	// new variable from reference: o0:Tile -> location -> o1:Location
 
 	mpw::Location o1 = o0->getLocation();
 
-	// assert condition: o1.row == location.row
-	if (o1.getRow() != location.getRow()) {
+	// assert condition: o1.column == location.column
+	if (o1.getColumn() != location.getColumn()) {
 		return false;
 	}
 
-	// assert condition: o1.column == location.column
-	if (o1.getColumn() != location.getColumn()) {
+	// assert condition: o1.row == location.row
+	if (o1.getRow() != location.getRow()) {
 		return false;
 	}
 
@@ -153,13 +153,13 @@ std::shared_ptr<mpw::Tile> InitKaraCommand::addToWorld_findO0(
 		// reference check: o0: location
 		mpw::Location o1 = o0->getLocation();
 
-		// attribute check: o1: row
-		if (o1.getRow() != location.getRow()) {
+		// attribute check: o1: column
+		if (o1.getColumn() != location.getColumn()) {
 			continue;
 		}
 
-		// attribute check: o1: column
-		if (o1.getColumn() != location.getColumn()) {
+		// attribute check: o1: row
+		if (o1.getRow() != location.getRow()) {
 			continue;
 		}
 

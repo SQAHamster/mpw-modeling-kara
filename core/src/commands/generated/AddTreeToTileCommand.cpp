@@ -18,21 +18,21 @@ namespace commands {
 void AddTreeToTileCommand::execute() {
 
 	/*
-	 * location has to be on the world
-	 */
-
-	if ((self->isLocationInWorld(location)) == false) {
-		throw CommandConstraintException(
-				"Violation of Precondition: location has to be on the world");
-	}
-
-	/*
 	 * the tile at the given location has to be empty
 	 */
 
 	if ((self->getTileAt(location)->getContents().empty()) == false) {
 		throw CommandConstraintException(
 				"Violation of Precondition: the tile at the given location has to be empty");
+	}
+
+	/*
+	 * location has to be on the world
+	 */
+
+	if ((self->isLocationInWorld(location)) == false) {
+		throw CommandConstraintException(
+				"Violation of Precondition: location has to be on the world");
 	}
 
 	/*

@@ -8,8 +8,8 @@
 #include <memory>
 #include <string>
 #include "ReadOnlyWorld.h"
-#include "Size.h"
 #include "Location.h"
+#include "Size.h"
 #include "Direction.h"
 
 #include "AddLeafToTileCommandParameters.h"
@@ -25,14 +25,14 @@ class ConcreteWorld;
 namespace mpw {
 class Tile;
 }
-namespace mpw {
-class TileContent;
-}
 namespace kara {
 class ConcreteKara;
 }
 namespace kara {
 class Leaf;
+}
+namespace mpw {
+class TileContent;
 }
 namespace kara {
 class Mushroom;

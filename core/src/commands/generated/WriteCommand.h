@@ -8,9 +8,9 @@
 #include "CompositeCommandBase.h"
 #include "WriteCommandParameters.h"
 
+#include "LogEntry.h"
 #include "GameLog.h"
 #include "ConcreteKara.h"
-#include "LogEntry.h"
 
 namespace commands {
 

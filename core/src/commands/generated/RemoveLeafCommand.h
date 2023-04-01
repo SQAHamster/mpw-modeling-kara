@@ -9,11 +9,11 @@
 #include "RemoveLeafCommandParameters.h"
 
 #include "GameLog.h"
-#include "ConcreteKara.h"
 #include "Tile.h"
+#include "LogEntry.h"
+#include "ConcreteKara.h"
 #include "Stage.h"
 #include "Leaf.h"
-#include "LogEntry.h"
 #include "TileContent.h"
 
 namespace commands {
@@ -22,8 +22,8 @@ namespace commands {
  * Pick up a leaf from the tile on which the kara is currently.<br/>
  * <br/>
  * <b>requires / ensures:</b> Kara is placed on a tile.<br/>
- * <b>requires:</b> there has to be a leaf available on the kara's tile<br/>
- * <b>ensures:</b> the kara must not be on any leaf
+ * <b>ensures:</b> the kara must not be on any leaf<br/>
+ * <b>requires:</b> there has to be a leaf available on the kara's tile
  * 
  */
 

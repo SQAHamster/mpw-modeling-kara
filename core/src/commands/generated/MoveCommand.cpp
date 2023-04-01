@@ -337,17 +337,17 @@ bool MoveCommand::moveMushroomWest() {
 		return false;
 	}
 
-	// new variable from reference: front:Tile -> west -> behind:Tile
-
-	std::shared_ptr < mpw::Tile > behind = front->getWest();
-	if (behind.get() == nullptr) {
-		return false;
-	}
-
 	// find new variable from many-reference: front:Tile -> contents -> o0:Mushroom
 
 	std::shared_ptr < kara::Mushroom > o0 = moveMushroomWest_findO0(*front);
 	if (o0 == nullptr) {
+		return false;
+	}
+
+	// new variable from reference: front:Tile -> west -> behind:Tile
+
+	std::shared_ptr < mpw::Tile > behind = front->getWest();
+	if (behind.get() == nullptr) {
 		return false;
 	}
 
@@ -467,17 +467,17 @@ bool MoveCommand::moveMushroomEast() {
 		return false;
 	}
 
-	// new variable from reference: front:Tile -> east -> behind:Tile
-
-	std::shared_ptr < mpw::Tile > behind = front->getEast();
-	if (behind.get() == nullptr) {
-		return false;
-	}
-
 	// find new variable from many-reference: front:Tile -> contents -> o0:Mushroom
 
 	std::shared_ptr < kara::Mushroom > o0 = moveMushroomEast_findO0(*front);
 	if (o0 == nullptr) {
+		return false;
+	}
+
+	// new variable from reference: front:Tile -> east -> behind:Tile
+
+	std::shared_ptr < mpw::Tile > behind = front->getEast();
+	if (behind.get() == nullptr) {
 		return false;
 	}
 

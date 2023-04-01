@@ -10,12 +10,12 @@
 
 #include "Location.h"
 #include "Direction.h"
-#include "Tile.h"
 #include "ConcreteWorld.h"
 #include "ConcreteKara.h"
-#include "Stage.h"
+#include "Tile.h"
 #include "Size.h"
 #include "TileContent.h"
+#include "Stage.h"
 
 namespace commands {
 

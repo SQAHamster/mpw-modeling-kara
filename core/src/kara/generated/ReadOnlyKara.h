@@ -27,13 +27,13 @@ namespace mpw {
 class TileContent;
 }
 namespace kara {
-class Leaf;
-}
-namespace kara {
 class Tree;
 }
 namespace kara {
 class Mushroom;
+}
+namespace kara {
+class Leaf;
 }
 
 namespace kara {
@@ -77,19 +77,9 @@ public:
 	virtual const framework::ObservablePrimitiveProperty<mpw::Direction>& directionProperty() const noexcept = 0;
 
 	/**
-	 * Checks the kara's current tile for leaf.
-	 */
-	virtual bool onLeaf() const noexcept = 0;
-
-	/**
 	 * Checks if a tree is at the left of the kara.
 	 */
 	virtual bool treeLeft() const noexcept = 0;
-
-	/**
-	 * Checks if a mushroom is at the front of the kara.
-	 */
-	virtual bool mushroomFront() const noexcept = 0;
 
 	/**
 	 * Get the current kara's location.
@@ -97,14 +87,24 @@ public:
 	virtual mpw::Location getLocation() const noexcept = 0;
 
 	/**
-	 * Checks if a tree is at the right of the kara.
+	 * Checks if a mushroom is at the front of the kara.
 	 */
-	virtual bool treeRight() const noexcept = 0;
+	virtual bool mushroomFront() const noexcept = 0;
 
 	/**
 	 * Checks if a tree is at the front of the kara.
 	 */
 	virtual bool treeFront() const noexcept = 0;
+
+	/**
+	 * Checks the kara's current tile for leaf.
+	 */
+	virtual bool onLeaf() const noexcept = 0;
+
+	/**
+	 * Checks if a tree is at the right of the kara.
+	 */
+	virtual bool treeRight() const noexcept = 0;
 
 };
 

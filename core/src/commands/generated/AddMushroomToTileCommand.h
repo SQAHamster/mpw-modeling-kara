@@ -9,11 +9,11 @@
 #include "AddMushroomToTileCommandParameters.h"
 
 #include "Location.h"
-#include "Mushroom.h"
 #include "ConcreteWorld.h"
+#include "Mushroom.h"
 #include "Tile.h"
-#include "Size.h"
 #include "TileContent.h"
+#include "Size.h"
 
 namespace commands {
 
@@ -21,9 +21,9 @@ namespace commands {
  * Place a mushroom at the given location. The location has to be empty before a mushroom can be placed.<br/>
  * <br/>
  * <b>requires / ensures:</b> the world tiles must not be empty<br/>
+ * <b>requires:</b> the tile at the given location has to be empty<br/>
  * <b>ensures:</b> a mushroom has to be placed on the tile's location<br/>
- * <b>requires:</b> location has to be on the world<br/>
- * <b>requires:</b> the tile at the given location has to be empty
+ * <b>requires:</b> location has to be on the world
  * 
  */
 

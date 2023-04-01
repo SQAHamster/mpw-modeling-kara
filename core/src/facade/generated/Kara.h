@@ -59,8 +59,8 @@ public:
 	 * Drop a leaf to the tile on which the kara is currently.<br/>
 	 * <br/>
 	 * <b>requires / ensures:</b> Kara is placed on a tile.<br/>
-	 * <b>requires:</b> the kara must not be on any leaf<br/>
-	 * <b>ensures:</b> there has to be a leaf available on the kara's tile
+	 * <b>ensures:</b> there has to be a leaf available on the kara's tile<br/>
+	 * <b>requires:</b> the kara must not be on any leaf
 	 * 
 	 */
 	void putLeaf();
@@ -68,8 +68,8 @@ public:
 	 * Pick up a leaf from the tile on which the kara is currently.<br/>
 	 * <br/>
 	 * <b>requires / ensures:</b> Kara is placed on a tile.<br/>
-	 * <b>requires:</b> there has to be a leaf available on the kara's tile<br/>
-	 * <b>ensures:</b> the kara must not be on any leaf
+	 * <b>ensures:</b> the kara must not be on any leaf<br/>
+	 * <b>requires:</b> there has to be a leaf available on the kara's tile
 	 * 
 	 */
 	void removeLeaf();
@@ -97,29 +97,29 @@ public:
 	 */
 	mpw::Direction getDirection() const noexcept;
 	/**
-	 * Checks the kara's current tile for leaf.
-	 */
-	bool onLeaf() const noexcept;
-	/**
 	 * Checks if a tree is at the left of the kara.
 	 */
 	bool treeLeft() const noexcept;
-	/**
-	 * Checks if a mushroom is at the front of the kara.
-	 */
-	bool mushroomFront() const noexcept;
 	/**
 	 * Get the current kara's location.
 	 */
 	mpw::Location getLocation() const noexcept;
 	/**
-	 * Checks if a tree is at the right of the kara.
+	 * Checks if a mushroom is at the front of the kara.
 	 */
-	bool treeRight() const noexcept;
+	bool mushroomFront() const noexcept;
 	/**
 	 * Checks if a tree is at the front of the kara.
 	 */
 	bool treeFront() const noexcept;
+	/**
+	 * Checks the kara's current tile for leaf.
+	 */
+	bool onLeaf() const noexcept;
+	/**
+	 * Checks if a tree is at the right of the kara.
+	 */
+	bool treeRight() const noexcept;
 	/**
 	 * Read a number from the simulator UI for further use.
 	 */

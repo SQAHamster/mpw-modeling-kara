@@ -30,13 +30,13 @@ namespace mpw {
 class TileContent;
 }
 namespace kara {
-class Leaf;
-}
-namespace kara {
 class Tree;
 }
 namespace kara {
 class Mushroom;
+}
+namespace kara {
+class Leaf;
 }
 
 namespace kara {
@@ -64,39 +64,17 @@ public:
 				inherited::shared_from_this());
 	}
 
-	bool onLeaf() const noexcept override;
-
-private:
-
-	bool helper_OnLeaf_currentTile_result0_contents_type_selectLeaf_not_empty() const noexcept;
-
-public:
-
 	bool treeLeft() const noexcept override;
 
 private:
-
-	bool helper_TreeLeft_currentTile_result0_east_result1_contents_type_selectTree_not_empty() const noexcept;
 
 	bool helper_TreeLeft_currentTile_result0_north_result1_contents_type_selectTree_not_empty() const noexcept;
 
 	bool helper_TreeLeft_currentTile_result0_south_result1_contents_type_selectTree_not_empty() const noexcept;
 
+	bool helper_TreeLeft_currentTile_result0_east_result1_contents_type_selectTree_not_empty() const noexcept;
+
 	bool helper_TreeLeft_currentTile_result0_west_result1_contents_type_selectTree_not_empty() const noexcept;
-
-public:
-
-	bool mushroomFront() const noexcept override;
-
-private:
-
-	bool helper_MushroomFront_currentTile_result0_east_result1_contents_type_selectMushroom_not_empty() const noexcept;
-
-	bool helper_MushroomFront_currentTile_result0_west_result1_contents_type_selectMushroom_not_empty() const noexcept;
-
-	bool helper_MushroomFront_currentTile_result0_north_result1_contents_type_selectMushroom_not_empty() const noexcept;
-
-	bool helper_MushroomFront_currentTile_result0_south_result1_contents_type_selectMushroom_not_empty() const noexcept;
 
 public:
 
@@ -108,17 +86,17 @@ private:
 
 public:
 
-	bool treeRight() const noexcept override;
+	bool mushroomFront() const noexcept override;
 
 private:
 
-	bool helper_TreeRight_currentTile_result0_west_result1_contents_type_selectTree_not_empty() const noexcept;
+	bool helper_MushroomFront_currentTile_result0_east_result1_contents_type_selectMushroom_not_empty() const noexcept;
 
-	bool helper_TreeRight_currentTile_result0_south_result1_contents_type_selectTree_not_empty() const noexcept;
+	bool helper_MushroomFront_currentTile_result0_west_result1_contents_type_selectMushroom_not_empty() const noexcept;
 
-	bool helper_TreeRight_currentTile_result0_north_result1_contents_type_selectTree_not_empty() const noexcept;
+	bool helper_MushroomFront_currentTile_result0_south_result1_contents_type_selectMushroom_not_empty() const noexcept;
 
-	bool helper_TreeRight_currentTile_result0_east_result1_contents_type_selectTree_not_empty() const noexcept;
+	bool helper_MushroomFront_currentTile_result0_north_result1_contents_type_selectMushroom_not_empty() const noexcept;
 
 public:
 
@@ -126,13 +104,35 @@ public:
 
 private:
 
+	bool helper_TreeFront_currentTile_result0_south_result1_contents_type_selectTree_not_empty() const noexcept;
+
 	bool helper_TreeFront_currentTile_result0_north_result1_contents_type_selectTree_not_empty() const noexcept;
 
-	bool helper_TreeFront_currentTile_result0_south_result1_contents_type_selectTree_not_empty() const noexcept;
+	bool helper_TreeFront_currentTile_result0_east_result1_contents_type_selectTree_not_empty() const noexcept;
 
 	bool helper_TreeFront_currentTile_result0_west_result1_contents_type_selectTree_not_empty() const noexcept;
 
-	bool helper_TreeFront_currentTile_result0_east_result1_contents_type_selectTree_not_empty() const noexcept;
+public:
+
+	bool onLeaf() const noexcept override;
+
+private:
+
+	bool helper_OnLeaf_currentTile_result0_contents_type_selectLeaf_not_empty() const noexcept;
+
+public:
+
+	bool treeRight() const noexcept override;
+
+private:
+
+	bool helper_TreeRight_currentTile_result0_south_result1_contents_type_selectTree_not_empty() const noexcept;
+
+	bool helper_TreeRight_currentTile_result0_east_result1_contents_type_selectTree_not_empty() const noexcept;
+
+	bool helper_TreeRight_currentTile_result0_north_result1_contents_type_selectTree_not_empty() const noexcept;
+
+	bool helper_TreeRight_currentTile_result0_west_result1_contents_type_selectTree_not_empty() const noexcept;
 
 public:
 

@@ -18,21 +18,21 @@ namespace commands {
 void AddMushroomToTileCommand::execute() {
 
 	/*
-	 * location has to be on the world
-	 */
-
-	if ((self->isLocationInWorld(location)) == false) {
-		throw CommandConstraintException(
-				"Violation of Precondition: location has to be on the world");
-	}
-
-	/*
 	 * the tile at the given location has to be empty
 	 */
 
 	if ((self->getTileAt(location)->getContents().empty()) == false) {
 		throw CommandConstraintException(
 				"Violation of Precondition: the tile at the given location has to be empty");
+	}
+
+	/*
+	 * location has to be on the world
+	 */
+
+	if ((self->isLocationInWorld(location)) == false) {
+		throw CommandConstraintException(
+				"Violation of Precondition: location has to be on the world");
 	}
 
 	/*
@@ -86,13 +86,13 @@ bool AddMushroomToTileCommand::internalMainUnit() {
 
 	mpw::Location o0 = o1->getLocation();
 
-	// assert condition: o0.row == location.row
-	if (o0.getRow() != location.getRow()) {
+	// assert condition: o0.column == location.column
+	if (o0.getColumn() != location.getColumn()) {
 		return false;
 	}
 
-	// assert condition: o0.column == location.column
-	if (o0.getColumn() != location.getColumn()) {
+	// assert condition: o0.row == location.row
+	if (o0.getRow() != location.getRow()) {
 		return false;
 	}
 
@@ -115,13 +115,13 @@ std::shared_ptr<mpw::Tile> AddMushroomToTileCommand::execute_findO1(
 		// reference check: o1: location
 		mpw::Location o0 = o1->getLocation();
 
-		// attribute check: o0: row
-		if (o0.getRow() != location.getRow()) {
+		// attribute check: o0: column
+		if (o0.getColumn() != location.getColumn()) {
 			continue;
 		}
 
-		// attribute check: o0: column
-		if (o0.getColumn() != location.getColumn()) {
+		// attribute check: o0: row
+		if (o0.getRow() != location.getRow()) {
 			continue;
 		}
 

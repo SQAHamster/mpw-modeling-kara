@@ -9,8 +9,8 @@
 #include "KaraGame.h"
 #include "ConcreteWorld.h"
 #include "Kara.h"
-#include "ConcreteKara.h"
 #include "MiniProgrammingWorld.h"
+#include "ConcreteKara.h"
 
 namespace kara {
 

@@ -10,11 +10,11 @@
 
 #include "Location.h"
 #include "Leaf.h"
-#include "ConcreteWorld.h"
 #include "Tile.h"
+#include "ConcreteWorld.h"
 #include "TileContent.h"
-#include "Size.h"
 #include "ConcreteKara.h"
+#include "Size.h"
 
 namespace commands {
 
