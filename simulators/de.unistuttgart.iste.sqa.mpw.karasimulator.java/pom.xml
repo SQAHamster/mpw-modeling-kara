@@ -11,7 +11,6 @@
 	<artifactId>root</artifactId>
 	<name>Polyglot Kara Simulator Root Project</name>
 	<packaging>pom</packaging>
-	<version>1.0.1</version>
 
 	<modules>
 		<module>parent</module>
